@@ -1,0 +1,60 @@
+<div ng-controller="homeController" class="main_nab" style="margin-top: 50px;">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" onclick="location.href='#!/home'"><img src="img/brandbb.png" class="size_logobrand"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a onclick="location.href='#!/home'">Inicio</a></li>
+                    <li ng-click="gotoElement('aboutse')"><a>Nosotros</a></li>
+                    <li ng-click="gotoElement('servicese')"><a>Servicios</a></li>
+                    <li ng-click="gotoElement('projectse')"><a>Projectos</a></li>
+                    <li><a onclick="location.href='#!/blog'">Blog</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-click="gotoElement('contactse')"><a>Contact</a></li>
+                    <li onclick="location.href='#!/home_en'"><a>English</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- responsive nab -->
+<div class="main_nab_res">
+    <nav class="navbar navbar-inverse marg_res_n">
+        <div class="container-fluid">
+            <div class="navbar-header outis">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <div class="cuadrillo" style="margin-top: -12px;">
+                        <div class="con">
+                            <div class="arriba"></div>
+                            <div class="medio"></div>
+                            <div class="abajo"></div>
+                        </div>
+                    </div>
+                </button>
+                <a class="navbar-brand" onclick="location.href='#!/home'">Avandel</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a onclick="location.href='#!/home'">Home</a></li>
+                    <li><a class="taba" onclick="location.href='#!/blog'">About</a></li>
+                    <li><a class="taba" onclick="location.href='#!/blog'">Blog</a></li>
+                    <li><a class="taba" onclick="location.href='#!/contact'">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <hr class="hrcu">
+                    <li style="margin-bottom: -15px;"><a><span class="glyphicon glyphicon-earphone" style="margin-right: 10px;"></span>+1 949-275-2703</a></li>
+                    <li><a><span class="glyphicon glyphicon-envelope" style="margin-right: 10px;"></span>support@medicis.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+

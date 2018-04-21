@@ -1,0 +1,496 @@
+/*hide sliders*/
+.slider_2 {
+    display: none;
+}
+
+.slider_3 {
+    display: none;
+}
+
+.slider_4 {
+    display: none;
+}
+.slider_5 {
+    display: none;
+}
+
+.arprojz {
+    width: 80px;
+}
+
+.projleftflecha {
+    margin-top: 130px;
+    cursor: pointer;
+    float: left;
+    width: 70px;
+   	margin-right: 20px;
+}
+.projrightflecha {
+    margin-top: 130px;
+    cursor: pointer;
+    float: left;
+    width: 70px;
+    margin-left: 20px;
+}
+.wrap_full_p_s {
+    position: relative
+    width: unset;
+    height: 340px;
+    margin-top: 40px;
+}
+
+.project_rightside {
+    float: left;
+    width: auto;
+    height: auto;
+
+}
+.project_leftside {
+    float: left;
+    width: 380px;
+    background-color: #00000057;
+    height: auto;
+    padding: 20px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.redil {
+    width: auto;
+    float: left;
+    height: auto;
+}
+
+/*Rendichicas styles*/
+.redichicas_s {
+    width: 500px;
+    box-shadow: 1px 1px 13px 0px #ffffff6b;
+}
+.m_t_rendi{
+    margin-top: 8px;
+}
+/*Calimax 10,20.. styles*/
+
+.m_t_cali10 {
+    margin-top: 58px;
+}
+.cali10_s {
+    width: 320px;
+    box-shadow: 1px 1px 13px 0px #ffffff6b;
+}
+/*Carrito loco */
+.m_t_carrito {
+    margin-top: 90px;
+}
+.carrito_s{
+	width: 390px;
+	box-shadow: 1px 1px 13px 0px #ffffff6b;
+}
+
+/*Uniradio style*/
+.m_t_uniradio {
+    margin-top: 30px;
+}
+.unir_s {
+    width: 440px;
+    box-shadow: 1px 1px 13px 0px #ffffff6b;
+    margin-top: 22px;
+}
+
+/*Ayuntamiento style*/
+.m_t_ayun{
+    margin-top: 40px;
+}
+.ayun_s {
+    width: 430px;
+    margin-top: 29px;
+}
+
+@media only screen and (min-width: 921px) and (max-width: 1048px) {
+     .ayun_s {
+        width: 350px;
+        margin-top: 79px;
+    }
+    .project_leftside {
+        float: left;
+        width: 310px;
+        background-color: #00000057;
+        height: auto;
+        padding: 20px;
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+    .wrap_full_p_s {
+        position: relative;
+        width: unset;
+        height: 450px;
+        margin-top: 40px;
+    }
+    .redichicas_s {
+        width: 370px;
+        margin-top: 80px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .cali10_s {
+        width: 310px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .carrito_s {
+        width: 340px;
+        margin-top: 30px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .unir_s {
+        width: 360px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+        margin-top: 62px;
+    }
+
+}
+
+@media only screen and (min-width: 668px) and (max-width: 921px) {
+     .project_leftside {
+        float: none;
+        width: 430px;
+        background-color: #00000057;
+        height: auto;
+        padding: 20px;
+        border-radius: 15px;
+    }
+    .m_t_cali10 {
+        margin-top: 0px !important;
+    }
+    .m_t_carrito {
+        margin-top: 0px !important;
+    }
+    .m_t_uniradio {
+        margin-top: 0px;
+    }
+    .m_t_ayun {
+        margin-top: 0px;
+    }
+    .m_t_rendi {
+        margin-top: 0px;
+    }
+    .project_rightside {
+        float: none;
+        width: auto;
+        height: auto;
+    }
+     .redichicas_s {
+        width: 370px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .cali10_s {
+        width: 310px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .carrito_s {
+        width: 340px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .unir_s {
+        margin-top: 0px;
+        width: 360px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .wrap_full_p_s {
+        position: relative;
+        width: unset;
+        height: 710px;
+        margin-top: 40px;
+    }
+    .ayun_s {
+        width: 400px;
+        margin-top: 0px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+
+}
+
+@media only screen and (min-width: 496px) and (max-width: 668px) {
+     .project_leftside {
+        float: none;
+        width: 320px;
+        margin-left: auto;
+        background-color: #00000057;
+        height: auto;
+        padding: 20px;
+        border-radius: 15px;
+        margin-right: auto;
+    }
+    .arprojz {
+        width: 50px;
+    }
+    .projleftflecha {
+        margin-top: 130px;
+        cursor: pointer;
+        float: left;
+        width: 40px;
+        margin-right: 5px;
+    }
+    .projrightflecha {
+        margin-top: 130px;
+        cursor: pointer;
+        float: left;
+        width: 40px;
+        margin-left: -16px;
+    }
+    .m_t_cali10 {
+        margin-top: 0px !important;
+    }
+    .m_t_carrito {
+        margin-top: 0px !important;
+    }
+    .m_t_uniradio {
+        margin-top: 0px;
+    }
+    .m_t_ayun {
+        margin-top: 0px;
+    }
+    .m_t_rendi {
+        margin-top: 0px;
+    }
+    .project_rightside {
+        float: none;
+        width: auto;
+        height: auto;
+    }
+     .redichicas_s {
+        width: 370px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .cali10_s {
+        width: 310px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .carrito_s {
+        width: 340px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .unir_s {
+        margin-top: 0px;
+        width: 360px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .wrap_full_p_s {
+        position: relative;
+        width: unset;
+        height: 710px;
+        margin-top: 40px;
+    }
+    
+
+}
+
+@media only screen and (min-width: 424px) and (max-width: 496px) {
+     .project_leftside {
+        float: none;
+        width: 270px;
+        margin-left: auto;
+        background-color: #00000057;
+        height: auto;
+        padding: 20px;
+        border-radius: 15px;
+        margin-right: auto;
+    }
+    .carrito_s {
+        width: 230px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+        margin-top: 0px;
+    }
+    .cali10_s {
+        width: 230px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+        margin-top: 0px;
+    }
+
+
+    .about_title {
+        font-weight: 300;
+        font-size: 22px;
+        color: #f7941d;
+        text-align: left !important;
+    }
+    .arprojz {
+        width: 50px;
+    }
+    .projleftflecha {
+        margin-top: 130px;
+        cursor: pointer;
+        float: left;
+        width: 40px;
+        margin-right: 5px;
+    }
+    .projrightflecha {
+        margin-top: 130px;
+        cursor: pointer;
+        float: left;
+        width: 40px;
+        margin-left: -5px;
+    }
+    .m_t_cali10 {
+        margin-top: 0px !important;
+    }
+    .m_t_carrito {
+        margin-top: 0px !important;
+    }
+    .m_t_uniradio {
+        margin-top: 0px;
+    }
+    .m_t_ayun {
+        margin-top: 0px;
+    }
+    .m_t_rendi {
+        margin-top: 0px;
+    }
+    .project_rightside {
+        float: none;
+        width: auto;
+        height: auto;
+    }
+     .redichicas_s {
+        width: 280px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .carrito_s {
+        width: 220px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .unir_s {
+        width: 260px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+        margin-top: 0px;
+    }
+    .wrap_full_p_s {
+        position: relative;
+        width: unset;
+        height: 710px;
+        margin-top: 40px;
+    }
+    .ayun_s {
+        width: 270px;
+        margin-top: 0px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+
+}
+
+@media only screen and (min-width: 200px) and (max-width: 424px) {
+     .project_leftside {
+        float: none;
+        width: 270px;
+        margin-left: auto;
+        background-color: #00000057;
+        height: auto;
+        padding: 20px;
+        border-radius: 15px;
+        margin-right: auto;
+    }
+    .carrito_s {
+        width: 230px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+        margin-top: 0px;
+    }
+    .cali10_s {
+        width: 230px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+        margin-top: 0px;
+    }
+
+
+    .about_title {
+        font-weight: 300;
+        font-size: 22px;
+        color: #f7941d;
+        text-align: left !important;
+    }
+    .arprojz {
+        width: 40px;
+    }
+    .projleftflecha {
+        margin-top: 130px;
+        cursor: pointer;
+        float: left;
+        width: 30px;
+        margin-right: 5px;
+    }
+    .projrightflecha {
+        margin-top: 130px;
+        cursor: pointer;
+        float: left;
+        width: 30px;
+        margin-left: -5px;
+    }
+    .m_t_cali10 {
+        margin-top: 0px !important;
+    }
+    .m_t_carrito {
+        margin-top: 0px !important;
+    }
+    .m_t_uniradio {
+        margin-top: 0px;
+    }
+    .m_t_ayun {
+        margin-top: 0px;
+    }
+    .m_t_rendi {
+        margin-top: 0px;
+    }
+    .project_rightside {
+        float: none;
+        width: auto;
+        height: auto;
+    }
+    .redichicas_s {
+        width: 240px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .carrito_s {
+        width: 220px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+    .unir_s {
+        width: 230px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+        margin-top: 0px;
+    }
+    .wrap_full_p_s {
+        position: relative;
+        width: 330px;
+        height: 710px;
+        margin-top: 40px;
+        margin-left: -20px;
+    }
+    .ayun_s {
+        width: 230px;
+        margin-top: 0px;
+        box-shadow: 1px 1px 13px 0px #ffffff6b;
+    }
+
+}
+
+.medallas{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.medallasize{
+    width: 200px;
+}
+.meda_titulo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #295772;
+}
+.meda_text{
+    font-size: 18px;
+    color: #5d5555;
+}
+.ademasde{
+    font-size: 25px;
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #646468;
+}
