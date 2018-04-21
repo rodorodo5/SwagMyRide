@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main"  prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="UTF-8">
+	<title>Swag My Ride</title>
+	<!--     aquiva el favi -->
+   <link rel="apple-touch-icon" sizes="180x180" href="favi/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favi/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favi/favicon-16x16.png">
+    <link rel="manifest" href="favi/site.webmanifest">
+    <link rel="mask-icon" href="favi/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!--     aquiva el favi -->
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Swag My Ride" />
+    <meta name="image" content="../img/logo.png" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="og:description" content="Swag My Ride" />
+    <meta itemprop="og:description" content="Swag My Ride">
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style_blog.css">
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="js/jquery.growl.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/magnific.css">
+	<link rel="stylesheet" href="css/slider_de_projects.css">
+	<link rel="stylesheet" href="css/loginstyle.css">
+	
+	<link href="https://file.myfontastic.com/VmDhAPK7oWWxQQ9VMSUGeb/icons.css" rel="stylesheet">
+
+</head>
+<body>
+	<div ng-view></div>
+
+
+
+	<script src="js/jquery.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/controllers/loginController.js"></script>
+	<script src="app/controllers/createVehicleController.js"></script>
+	<script src="app/controllers/panelController.js"></script>
+	<script src="app/controllers/homeController.js"></script>
+	<script src="app/services/user_service.js"></script>
+	<script src="app/services/dataService.js"></script>
+	<script src="app/directives/fileModel.js"></script>
+	<script src="app/services/requestService.js"></script>
+	<script src="app/packages/ng-editor.js"></script>
+    <script src="app/packages/angular-sanitize.js"></script>
+    <script src="js/dirPagination.js"></script>
+    <script src="js/circle.js"></script>
+    <script src="js/angular-growl.js"></script>
+    <script src="app/services/modifytable.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/ckeditor.js"></script>
+    <script src="js/wow.js"></script>
+    <script>
+		function openEdit() {
+		    document.getElementById("edits").style.height = "100%";
+		}
+
+		function closeEdit() {
+		    document.getElementById("edits").style.height = "0%";
+		}
+	</script>
+
+	<script>
+      new WOW().init();
+    </script>
+
+
+
+</body>
+</html>
