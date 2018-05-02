@@ -4,21 +4,21 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace SwagMyRideApi.Data.Models.VehicleComponents
 {
-    public class MotorCatalogue
+    public class WheelCatalogue
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long MotorId { get; set; }
+        public long WheelId { get; set; }
         [Required]
         [MaxLength(90)]
         public string Name { get; set; }
         [Required]
         [MaxLength(255)]
         public string Description { get; set; }
-        
         [Required]
         public double Price { get; set; }
         [Required]
@@ -28,21 +28,10 @@ namespace SwagMyRideApi.Data.Models.VehicleComponents
         [Required]
         [MaxLength(255)]
         public string Image { get; set; }
-        
         [Required]
         public double Weight { get; set; }
         [Required]
-        public short HorsePower { get; set; }
-        [Required]
-        public short Cylinders  { get; set; }
-
-
-        [Required]
-        public long CombustibleId { get; set; }
-        [ForeignKey("CombustibleId")]
-        public CombustibleType CombustibleTypeId { get; set; }
-
-
+        public short Size { get; set; }
 
         [Required]
         public long Brand { get; set; }
@@ -53,6 +42,5 @@ namespace SwagMyRideApi.Data.Models.VehicleComponents
         public long Manufactured { get; set; }
         [ForeignKey("Manufactured")]
         public Country CountryId { get; set; }
-
     }
 }
