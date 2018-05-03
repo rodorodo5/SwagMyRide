@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using SwagMyRide.Data.DataContext;
 
-
-namespace SwagMyRideApi.Api
+namespace SwagMyRide.Data
 {
     public class Startup
     {
@@ -25,12 +23,9 @@ namespace SwagMyRideApi.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-         
             services.AddMvc();
-
-           
-
-
+            services.AddDbContext<ApplicationContext>(options =>
+                options.UseSqlServer(Configuration["ConnectionString:SwagMyRideDB"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,8 +33,15 @@ namespace SwagMyRideApi.Api
         {
             if (env.IsDevelopment())
             {
+                app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+            }
+
+            app.UseStaticFiles();
 
             app.UseMvc();
         }
