@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using System.Web.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SwagMyRideApi.Services.Services;
+
 namespace SwagMyRideApi.Api.Controllers
 {
     [Produces("application/json")]
-    public class BodyWorkController : Controller
+    public class BrandController : Controller
     {
-        private  readonly IBodyWorkCatalogue _iBodyWorkCatalogue = new BodyWorkCatalogue();
+        private readonly IBrandCatalogue _iBrandCatalogue = new BrandCatalogue();
 
         [Microsoft.AspNetCore.Mvc.HttpGet]
-        [Microsoft.AspNetCore.Mvc.Route("api/data/bodywork")]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/brand")]
         public IActionResult GetBodyData()
         {
-            var bodyData = _iBodyWorkCatalogue.GetAllData();
+            var bodyData = _iBrandCatalogue.GetAllData();
             if (bodyData == null)
             {
                 return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
@@ -26,12 +26,11 @@ namespace SwagMyRideApi.Api.Controllers
 
             return Ok(bodyData);
         }
-
         [Microsoft.AspNetCore.Mvc.HttpGet]
-        [Microsoft.AspNetCore.Mvc.Route("api/data/bodywork/{id}")]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/brand/{id}")]
         public IActionResult GetBody(int id)
         {
-            var bodyData = _iBodyWorkCatalogue.GetData(id);
+            var bodyData = _iBrandCatalogue.GetData(id);
             if (bodyData == null)
             {
                 return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
