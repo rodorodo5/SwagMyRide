@@ -12,4 +12,7 @@
     <ProjectReference Include="..\SwagMyRide.Data\SwagMyRide.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Startup.cs" />
+  </ItemGroup>
 </Project>

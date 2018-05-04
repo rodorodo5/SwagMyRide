@@ -1,0 +1,70 @@
+/*all styles here*/
+
+.bg-rodo{
+	background-color: #df3838!important;
+}
+.color-textow{
+	cursor: pointer;
+	color: white !important;
+}
+.color-textoy{
+	cursor: pointer;
+	color: #FFC107 !important;
+}
+.floatedr{
+	float: right !important;
+}
+
+.home_banner{
+	background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url(../img/bannerhome.jpg);
+	height: 400px;
+	padding-top: 140px;
+	width: 100%;
+}
+.bienvenido_t {
+    color: white;
+    font-size: 45px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.padcontl{
+	margin-top: 100px;
+}
+
+.text_center{
+	text-align: center;
+}
+
+.marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.marketing h2 {
+    font-weight: 400;
+}
+@media (min-width: 40em){
+	.featurette-heading {
+	    font-size: 50px;
+	}
+}
+
+@media (min-width: 40em){
+	.featurette-heading {
+	    font-size: 50px;
+	}
+}
+
+@media (min-width: 62em){
+	.featurette-heading {
+	    margin-top: 7rem;
+	}
+}
+
+.circle_bord{
+	border-style: solid;
+    border-width: 1px;
+    border-color: #6b757c;
+}
+
+
