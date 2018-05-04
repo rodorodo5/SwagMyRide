@@ -8,24 +8,24 @@ using SwagMyRide.Data.Services;
 
 namespace SwagMyRideApi.Services.Services
 {
-    public class BrandCatalogue:IBaseCall
+    public class BreakCatalogue: IBaseCall
     {
         private readonly ApplicationContext _db;
-        public BrandCatalogue()
+
+        public BreakCatalogue()
         {
-            _db = new ApplicationContext();
-            
+            _db =  new ApplicationContext();
         }
 
         public IEnumerable<Service> GetData(int id)
         {
             
-            return _db.BrandCatalogue.Where(x => x.BrandId == id).ToList();
+            return _db.BreakCatalogue.Where(x => x.BreakId == id).ToList();
         }
 
         public IEnumerable<Service> GetAllData()
         {
-            return _db.BrandCatalogue.ToList();
+            return _db.BreakCatalogue.ToList();
 
         }
     }

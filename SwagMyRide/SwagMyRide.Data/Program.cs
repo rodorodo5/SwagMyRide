@@ -7,6 +7,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using SwagMyRide.Data.Models.VehicleComponents;
+using SwagMyRide.Data.Services;
 
 namespace SwagMyRide.Data
 {
@@ -21,5 +23,7 @@ namespace SwagMyRide.Data
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .Build();
+
+        
     }
 }

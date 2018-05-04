@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using SwagMyRide.Data.Services;
 
 namespace SwagMyRide.Data.Models.VehicleComponents
 {
-    public class BreakCatalogue
-    {
+    public class BreakCatalogue: Service
+    { 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long BreakId { get; set; }

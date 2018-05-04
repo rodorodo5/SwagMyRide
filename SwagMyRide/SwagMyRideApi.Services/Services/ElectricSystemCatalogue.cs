@@ -2,31 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using SwagMyRide.Data.DataContext;
 using SwagMyRide.Data.Services;
 
 namespace SwagMyRideApi.Services.Services
 {
-    public class BrandCatalogue:IBaseCall
+    public class ElectricSystemCatalogue:IBaseCall
     {
         private readonly ApplicationContext _db;
-        public BrandCatalogue()
+
+        public ElectricSystemCatalogue()
         {
             _db = new ApplicationContext();
-            
         }
 
-        public IEnumerable<Service> GetData(int id)
+        IEnumerable<Service> IBaseCall.GetAllData()
         {
-            
-            return _db.BrandCatalogue.Where(x => x.BrandId == id).ToList();
+            return _db.ElectricSystemCatalogue.ToList();
         }
 
-        public IEnumerable<Service> GetAllData()
+        IEnumerable<Service> IBaseCall.GetData(int id)
         {
-            return _db.BrandCatalogue.ToList();
-
+            return _db.ElectricSystemCatalogue.Where(x => x.ElecticSystemId == id).ToList();
         }
     }
 }
+

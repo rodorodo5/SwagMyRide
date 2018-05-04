@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using SwagMyRide.Data.Services;
 
 namespace SwagMyRide.Data.Models.VehicleComponents
 {
-    public class CombustibleType
+    public class CombustibleType: Service
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

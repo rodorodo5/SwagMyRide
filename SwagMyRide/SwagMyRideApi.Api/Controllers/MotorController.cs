@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using System.Web.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SwagMyRideApi.Services.Services;
+
 namespace SwagMyRideApi.Api.Controllers
 {
     [Produces("application/json")]
-    [System.Web.Http.Route("api/body")]
-    public class BodyWorkController : BaseController
+    [Route("api/Motor")]
+    public class MotorController : BaseController
     {
-        public BodyWorkController()
+        public MotorController()
         {
-            Ibase = new BodyWorkCatalogue();
+            Ibase = new BreakCatalogue();
         }
-        //private  readonly IBodyWorkCatalogue _iBodyWorkCatalogue = new BodyWorkCatalogue();
+        
 
         //[Microsoft.AspNetCore.Mvc.HttpGet]
-        //[Microsoft.AspNetCore.Mvc.Route("api/[controller]/all")]
+        //[Microsoft.AspNetCore.Mvc.Route("api/data/motor")]
         //public IActionResult GetBodyData()
         //{
-        //    var bodyData = _iBodyWorkCatalogue.GetAllData();
+        //    var bodyData = _motorCatalogue.GetAllData()
         //    if (bodyData == null)
         //    {
         //        return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
@@ -31,12 +31,11 @@ namespace SwagMyRideApi.Api.Controllers
 
         //    return Ok(bodyData);
         //}
-
         //[Microsoft.AspNetCore.Mvc.HttpGet]
-        //[Microsoft.AspNetCore.Mvc.Route("api/data/bodywork/{id}")]
+        //[Microsoft.AspNetCore.Mvc.Route("api/data/motor/{id}")]
         //public IActionResult GetBody(int id)
         //{
-        //    var bodyData = _iBodyWorkCatalogue.GetData(id);
+        //    var bodyData = _motorCatalogue.GetData(id);
         //    if (bodyData == null)
         //    {
         //        return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");

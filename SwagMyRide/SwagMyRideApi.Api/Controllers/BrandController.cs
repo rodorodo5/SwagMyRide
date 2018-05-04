@@ -10,33 +10,37 @@ using SwagMyRideApi.Services.Services;
 namespace SwagMyRideApi.Api.Controllers
 {
     [Produces("application/json")]
-    public class BrandController : Controller
+    public class BrandController : BaseController
     {
-        private readonly IBrandCatalogue _iBrandCatalogue = new BrandCatalogue();
-
-        [Microsoft.AspNetCore.Mvc.HttpGet]
-        [Microsoft.AspNetCore.Mvc.Route("api/data/brand")]
-        public IActionResult GetBodyData()
+        public BrandController()
         {
-            var bodyData = _iBrandCatalogue.GetAllData();
-            if (bodyData == null)
-            {
-                return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
-            }
-
-            return Ok(bodyData);
+            Ibase = new BodyWorkCatalogue();
         }
-        [Microsoft.AspNetCore.Mvc.HttpGet]
-        [Microsoft.AspNetCore.Mvc.Route("api/data/brand/{id}")]
-        public IActionResult GetBody(int id)
-        {
-            var bodyData = _iBrandCatalogue.GetData(id);
-            if (bodyData == null)
-            {
-                return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
-            }
+        //private readonly IBrandCatalogue _iBrandCatalogue = new BrandCatalogue();
 
-            return Ok(bodyData);
-        }
+        //[Microsoft.AspNetCore.Mvc.HttpGet]
+        //[Microsoft.AspNetCore.Mvc.Route("api/data/brand")]
+        //public IActionResult GetBodyData()
+        //{
+        //    var bodyData = _iBrandCatalogue.GetAllData();
+        //    if (bodyData == null)
+        //    {
+        //        return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
+        //    }
+
+        //    return Ok(bodyData);
+        //}
+        //[Microsoft.AspNetCore.Mvc.HttpGet]
+        //[Microsoft.AspNetCore.Mvc.Route("api/data/brand/{id}")]
+        //public IActionResult GetBody(int id)
+        //{
+        //    var bodyData = _iBrandCatalogue.GetData(id);
+        //    if (bodyData == null)
+        //    {
+        //        return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
+        //    }
+
+        //    return Ok(bodyData);
+        //}
     }
 }
