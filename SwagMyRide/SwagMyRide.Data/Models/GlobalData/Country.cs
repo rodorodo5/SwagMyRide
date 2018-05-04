@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using SwagMyRide.Data.Services;
 
-namespace SwagMyRide.Data.Models
+namespace SwagMyRide.Data.Models.GlobalData
 {
-    public class Country
+    public class Country: Service
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

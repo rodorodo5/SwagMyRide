@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using SwagMyRide.Data.Models.GlobalData;
 using SwagMyRide.Data.Services;
 
 namespace SwagMyRide.Data.Models.VehicleComponents

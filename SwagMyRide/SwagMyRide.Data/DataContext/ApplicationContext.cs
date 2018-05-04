@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SwagMyRide.Data.Models;
+using SwagMyRide.Data.Models.GlobalData;
+using SwagMyRide.Data.Models.UserData;
 using SwagMyRide.Data.Models.VehicleComponents;
 
 namespace SwagMyRide.Data.DataContext
@@ -19,6 +21,7 @@ namespace SwagMyRide.Data.DataContext
         public DbSet<WheelCatalogue> WheelCatalogue { get; set; }
         public DbSet<Country> Country { get; set; }
         public DbSet<State> State { get; set; }
+        public DbSet<UserProfile> UserProfile { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
