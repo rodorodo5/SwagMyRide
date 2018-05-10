@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using SwagMyRide.Data;
 
 namespace SwagMyRideApi.Services
 {

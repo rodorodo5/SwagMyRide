@@ -8,7 +8,16 @@ namespace SwagMyRide.Data.DataContext
 {
     public class ApplicationContext: DbContext
     {
-        
+        public ApplicationContext()
+        {
+
+        }
+
+        public ApplicationContext(DbContextOptions<ApplicationContext> dbContextOptions): base(dbContextOptions)
+        {
+
+        }
+
         public DbSet<City> City { get; set; }
         public DbSet<BodyWorkCatalogue> BodyWorkCatalogue { get; set; }
         public DbSet<BrandCatalogue> BrandCatalogue { get; set; }
@@ -25,7 +34,7 @@ namespace SwagMyRide.Data.DataContext
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server = BERENICE\ISAAC; Database = SwagMyRideDB; Trusted_Connection = True;");
+            optionsBuilder.UseSqlServer(@"Server=tcp:swagmyridedb.database.windows.net,1433;Initial Catalog=SwagMyRideDB;Persist Security Info=False;User ID='SwagMyRideDB';Password='polloFrito1';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
     }
 }

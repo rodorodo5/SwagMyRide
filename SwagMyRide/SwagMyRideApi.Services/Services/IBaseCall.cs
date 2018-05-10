@@ -12,5 +12,6 @@ namespace SwagMyRideApi.Services.Services
       
         IEnumerable<Service> GetData(int id);
         IEnumerable<Service> GetAllData();
+
     }
 }

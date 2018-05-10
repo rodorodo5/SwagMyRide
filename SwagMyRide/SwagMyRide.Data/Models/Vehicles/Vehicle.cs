@@ -13,6 +13,7 @@ namespace SwagMyRide.Data.Models.Vehicles
         public long VehicleId { get; set; }
         [Required]
         public long UserProfileId { get; set; }
+        [Required]
         public DateTime LastModifyTime { get; set; }
         public long VehicleBrandId { get; set; }
         public long VehicleModelId { get; set; }
