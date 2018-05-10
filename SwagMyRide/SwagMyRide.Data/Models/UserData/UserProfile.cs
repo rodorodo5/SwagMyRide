@@ -6,10 +6,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SwagMyRide.Data.Models.GlobalData;
+using SwagMyRide.Data.Services;
 
 namespace SwagMyRide.Data.Models.UserData
 {
-    public class UserProfile
+    public class UserProfile:Service
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -38,6 +39,8 @@ namespace SwagMyRide.Data.Models.UserData
         [Required]
         public long Country { get; set; }
 
+        [Required]
+        public string Password { get; set; }
 
         [ForeignKey("Country")]
         public Country CountryId { get; set; }

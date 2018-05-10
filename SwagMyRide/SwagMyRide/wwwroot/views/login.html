@@ -1,6 +1,6 @@
 <div ng-include="'templates/navbar_pre.html'"></div>
 <div class="container padcontl">
-    <form class="form-horizontal" role="form" method="POST" action="/login">
+    <form class="form-horizontal" >
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
@@ -43,7 +43,7 @@
         <div class="row" style="padding-top: 1rem">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <button type="submit" ng-click="login()" class="btn btn-success"><i class="fa fa-sign-in"></i> Login</button>
+                <button ng-click="login()" class="btn btn-success"><i class="fa fa-sign-in"></i> Login</button>
             </div>
         </div>
     </form>

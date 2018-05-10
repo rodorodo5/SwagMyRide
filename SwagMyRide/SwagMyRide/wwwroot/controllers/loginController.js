@@ -5,14 +5,15 @@ app.controller('loginController', function($scope, $http, $location, user) {
 		var password = $scope.password;
 
 		$http({
-			url: 'api/server.php',
+            url: 'api/userdata/{email}/{password}',
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
 			data: 'email='+ email+ '&password=' +password
-		}).then(function(response) {
-			if(response.data.status == 'loggedin') {
+        }).then(function (response) {
+		    console.log(response.data);
+			if(response.data === 'loggedin') {
 				user.saveData(response.data);
 				$location.path('/panel');
 			} else {

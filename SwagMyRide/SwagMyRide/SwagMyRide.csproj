@@ -12,6 +12,10 @@
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.7" />
     <PackageReference Include="angularjs" Version="1.6.10" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SwagMyRideApi.Api\SwagMyRideApi.Api.csproj" />
+  </ItemGroup>
   
 
 
