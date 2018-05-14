@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SwagMyRide.Data.Models.VehicleData
 {
+
     public class VehicleType
     {
         [Key]
@@ -17,5 +18,11 @@ namespace SwagMyRide.Data.Models.VehicleData
         [MaxLength(90)]
         public string VehicleTypeName { get; set; }
 
+       public enum VechicleTypes
+       {
+           Air=1,Water=2,Land=3
+       }
+
     }
+
 }

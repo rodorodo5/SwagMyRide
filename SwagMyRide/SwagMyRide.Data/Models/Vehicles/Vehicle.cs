@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SwagMyRide.Data.Models.UserData;
@@ -11,7 +12,7 @@ using SwagMyRide.Data.Models.VehicleData;
 
 namespace SwagMyRide.Data.Models.Vehicles
 {
-    public class Vehicle
+    public abstract class Vehicle
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -29,12 +30,12 @@ namespace SwagMyRide.Data.Models.Vehicles
         public long VehicleYear { get; set; }
 
         [Required]
-        public long BodyWorkCatalogueId { get; set; }
+        public long BodyWorkId { get; set; }
         [ForeignKey("BodyWorkId")]
         public BodyWorkCatalogue BodyWorkCatalogue { get; set; }
 
         [Required]
-        public long BreakCatalogueId { get; set; }
+        public long BreakId { get; set; }
         [ForeignKey("BreakId")]
         public BreakCatalogue BreakCatalogue { get; set; }
 
@@ -83,5 +84,10 @@ namespace SwagMyRide.Data.Models.Vehicles
         [ForeignKey("VechileTypeId")]
         public VehicleType VehicleType { get; set; }
 
+        [Required]
+        public string Color { get; set; }
+
+        public abstract string GetPiece();
+        public abstract string GetDescription();
     }
 }

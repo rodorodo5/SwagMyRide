@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using SwagMyRide.Data.DataContext;
 using SwagMyRide.Data.Services;
+using SwagMyRideApi.Services.Services.Interfaces;
 
 namespace SwagMyRideApi.Services.Services
 {
