@@ -1,0 +1,54 @@
+USE SwagMyRideDB
+insert into VehicleType (VehicleTypeName) values ('Aire');
+insert into VehicleType (VehicleTypeName) values ('Agua');
+insert into VehicleType (VehicleTypeName) values ('Tierra');
+
+insert into VehicleBrands (BrandName,VehicleTypeId) values ('Ford AirCraft',1);
+insert into VehicleBrands (BrandName,VehicleTypeId) values ('Baja',2);
+insert into VehicleBrands (BrandName,VehicleTypeId) values ('Ford',3);
+
+insert into VehicleBrands (BrandName,VehicleTypeId) values ('Nissan AirCraft',1);
+insert into VehicleBrands (BrandName,VehicleTypeId) values ('Boston Whaler',2);
+insert into VehicleBrands (BrandName,VehicleTypeId) values ('Nissan',3);
+
+insert into VehicleBrands (BrandName,VehicleTypeId) values ('Honda AirCraft',1);
+insert into VehicleBrands (BrandName,VehicleTypeId) values ('Bayliner',2);
+insert into VehicleBrands (BrandName,VehicleTypeId) values ('Honda',3);
+
+--AirPlane--
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Nissan AirCraft',1998,4,1);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Nissan AirCraft',2004,4,1);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Nissan AirCraft',2017,4,1);
+
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Ford AirCraft',1998,1,1);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Ford AirCraft',2016,1,1);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Ford AirCraft',2017,1,1);
+
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Honda AirCraft',1998,7,1);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Honda AirCraft',2004,7,1);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Honda AirCraft',2017,7,1);
+--Boats--
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Baja',1993,2,2);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Baja',2003,2,2);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Baja',2017,2,2);
+
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Boston Whaler',1995,5,2);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Boston Whaler',2013,5,2);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Boston Whaler',2017,5,2);
+
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Bayliner',1998,8,2);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Bayliner',2004,8,2);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Bayliner',2017,8,2);
+--Tierra--		
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Sentra',1980,6,3);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Sentra',1996,6,3);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Sentra',2018,6,3);
+
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Focus',1980,3,3);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Focus',2010,3,3);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Focus',2018,3,3);
+
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Civic',1980,9,3);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Civic',2017,9,3);
+insert into VehicleModels (VehicleNameModel,VehicleYearModel,VehicleBrandlId,VehicleTypeId) values ('Civic',2018,9,3);
+

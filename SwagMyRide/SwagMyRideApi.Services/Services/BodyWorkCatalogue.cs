@@ -16,16 +16,7 @@ namespace SwagMyRideApi.Services.Services
             _db =new ApplicationContext();
            
         }
-        //public List<SwagMyRide.Data.Models.VehicleComponents.BodyWorkCatalogue> GetAllData()
-        //{
-        //   return _db.BodyWorkCatalogue.ToList();
-        //}
-
-        //public List<SwagMyRide.Data.Models.VehicleComponents.BodyWorkCatalogue> GetData(int index)
-        //{
-        //    return _db.BodyWorkCatalogue.Where(x => x.BodyWorkId==index).ToList();
-        //}
-
+      
 
         IEnumerable<Service> IBaseCall.GetData(int id)
         {

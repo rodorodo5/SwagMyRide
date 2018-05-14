@@ -10,37 +10,13 @@ using SwagMyRideApi.Services.Services;
 namespace SwagMyRideApi.Api.Controllers
 {
     [Produces("application/json")]
+    [System.Web.Http.Route("api/data/brand")]
     public class BrandController : BaseController
     {
         public BrandController()
         {
             Ibase = new BodyWorkCatalogue();
         }
-        //private readonly IBrandCatalogue _iBrandCatalogue = new BrandCatalogue();
-
-        //[Microsoft.AspNetCore.Mvc.HttpGet]
-        //[Microsoft.AspNetCore.Mvc.Route("api/data/brand")]
-        //public IActionResult GetBodyData()
-        //{
-        //    var bodyData = _iBrandCatalogue.GetAllData();
-        //    if (bodyData == null)
-        //    {
-        //        return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
-        //    }
-
-        //    return Ok(bodyData);
-        //}
-        //[Microsoft.AspNetCore.Mvc.HttpGet]
-        //[Microsoft.AspNetCore.Mvc.Route("api/data/brand/{id}")]
-        //public IActionResult GetBody(int id)
-        //{
-        //    var bodyData = _iBrandCatalogue.GetData(id);
-        //    if (bodyData == null)
-        //    {
-        //        return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
-        //    }
-
-        //    return Ok(bodyData);
-        //}
+       
     }
 }

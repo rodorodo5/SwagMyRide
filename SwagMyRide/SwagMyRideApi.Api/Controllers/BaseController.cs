@@ -15,7 +15,7 @@ namespace SwagMyRideApi.Api.Controllers
         protected IBaseCall Ibase;
 
         [HttpGet]
-        [Route("api/data/[controller]")]
+        [Route("api/data/[controller]/")]
         public IActionResult GetBodyData()
         {
 

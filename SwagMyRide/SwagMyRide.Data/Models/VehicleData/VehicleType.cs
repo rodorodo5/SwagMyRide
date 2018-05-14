@@ -7,17 +7,15 @@ using System.Threading.Tasks;
 
 namespace SwagMyRide.Data.Models.VehicleData
 {
-    public class VehicleBrand
+    public class VehicleType
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long VehicleBrandId { get; set; }
-        [MaxLength(100)]
-        public string BrandName { get; set; }
+        public short VehicleTypeId { get; set; }
 
         [Required]
-        public short VehicleTypeId { get; set; }
-        [ForeignKey("VehicleTypeId")]
-        public VehicleType VehicleType { get; set; }
+        [MaxLength(90)]
+        public string VehicleTypeName { get; set; }
+
     }
 }
