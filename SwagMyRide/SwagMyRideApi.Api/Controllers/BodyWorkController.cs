@@ -10,7 +10,6 @@ using SwagMyRideApi.Services.Services;
 namespace SwagMyRideApi.Api.Controllers
 {
     [Produces("application/json")]
-    [System.Web.Http.Route("api/data/body")]
     public class BodyWorkController : BaseController
     {
         public BodyWorkController()
