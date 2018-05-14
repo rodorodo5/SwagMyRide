@@ -26,7 +26,7 @@ namespace SwagMyRideApi.Api.Controllers
                 return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
             }
 
-            return Ok("loggedin");//return data in json with status lable and new uniqid
+            return Ok("loggedin"); //return data in json with status lable and new uniqid
         }
 
     }
