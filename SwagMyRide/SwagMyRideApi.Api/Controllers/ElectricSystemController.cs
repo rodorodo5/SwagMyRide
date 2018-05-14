@@ -10,7 +10,6 @@ using SwagMyRideApi.Services.Services;
 namespace SwagMyRideApi.Api.Controllers
 {
     [Produces("application/json")]
-    [Route("api/ElectricSystem")]
     public class ElectricSystemController : BaseController
     {
         public ElectricSystemController()

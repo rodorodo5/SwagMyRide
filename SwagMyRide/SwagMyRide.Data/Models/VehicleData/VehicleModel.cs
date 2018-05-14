@@ -19,5 +19,14 @@ namespace SwagMyRide.Data.Models.VehicleData
         [MaxLength(4)]
         public short VehicleYearModel { get; set; }
 
+        [Required]
+        public long VehicleBrandlId { get; set; }
+        [ForeignKey("VehicleBrandlId")]
+        public VehicleBrand BrandVehicle { get; set; }
+
+        [Required]
+        public short VehicleTypeId { get; set; }
+        [ForeignKey("VehicleTypeId")]
+        public VehicleType VehicleType { get; set; }
     }
 }

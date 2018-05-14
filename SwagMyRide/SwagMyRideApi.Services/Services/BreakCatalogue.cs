@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SwagMyRide.Data.DataContext;
 using SwagMyRide.Data.Services;
+using SwagMyRideApi.Services.Services.Interfaces;
 
 namespace SwagMyRideApi.Services.Services
 {

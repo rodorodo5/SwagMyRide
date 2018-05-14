@@ -3,6 +3,8 @@ using SwagMyRide.Data.Models;
 using SwagMyRide.Data.Models.GlobalData;
 using SwagMyRide.Data.Models.UserData;
 using SwagMyRide.Data.Models.VehicleComponents;
+using SwagMyRide.Data.Models.VehicleData;
+using SwagMyRide.Data.Models.Vehicles;
 
 namespace SwagMyRide.Data.DataContext
 {
@@ -31,6 +33,9 @@ namespace SwagMyRide.Data.DataContext
         public DbSet<Country> Country { get; set; }
         public DbSet<State> State { get; set; }
         public DbSet<UserProfile> UserProfile { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<VehicleBrand> VehicleBrands { get; set; }
+        public DbSet<VehicleModel> VehicleModels { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

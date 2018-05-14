@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using SwagMyRide.Data.Models.GlobalData;
+using SwagMyRide.Data.Models.VehicleData;
 using SwagMyRide.Data.Services;
 
 namespace SwagMyRide.Data.Models.VehicleComponents
@@ -41,5 +42,9 @@ namespace SwagMyRide.Data.Models.VehicleComponents
         [ForeignKey("Manufactured")]
         public Country CountryId { get; set; }
 
+        [Required]
+        public short VechileTypeId { get; set; }
+        [ForeignKey("VechileTypeId")]
+        public VehicleType VehicleType { get; set; }
     }
 }

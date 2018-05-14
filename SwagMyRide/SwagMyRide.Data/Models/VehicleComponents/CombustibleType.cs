@@ -12,5 +12,7 @@ namespace SwagMyRide.Data.Models.VehicleComponents
         [Required]
         [MaxLength(90)]
         public string Name { get; set; }
+
+
     }
 }

@@ -14,33 +14,8 @@ namespace SwagMyRideApi.Api.Controllers
     {
         public BrandController()
         {
-            Ibase = new BodyWorkCatalogue();
+            Ibase = new BrandCatalogue();
         }
-        //private readonly IBrandCatalogue _iBrandCatalogue = new BrandCatalogue();
-
-        //[Microsoft.AspNetCore.Mvc.HttpGet]
-        //[Microsoft.AspNetCore.Mvc.Route("api/data/brand")]
-        //public IActionResult GetBodyData()
-        //{
-        //    var bodyData = _iBrandCatalogue.GetAllData();
-        //    if (bodyData == null)
-        //    {
-        //        return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
-        //    }
-
-        //    return Ok(bodyData);
-        //}
-        //[Microsoft.AspNetCore.Mvc.HttpGet]
-        //[Microsoft.AspNetCore.Mvc.Route("api/data/brand/{id}")]
-        //public IActionResult GetBody(int id)
-        //{
-        //    var bodyData = _iBrandCatalogue.GetData(id);
-        //    if (bodyData == null)
-        //    {
-        //        return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
-        //    }
-
-        //    return Ok(bodyData);
-        //}
+       
     }
 }

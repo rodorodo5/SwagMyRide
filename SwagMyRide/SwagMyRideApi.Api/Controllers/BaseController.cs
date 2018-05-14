@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SwagMyRideApi.Services.Services;
+using SwagMyRideApi.Services.Services.Interfaces;
 
 namespace SwagMyRideApi.Api.Controllers
 {
@@ -15,7 +16,7 @@ namespace SwagMyRideApi.Api.Controllers
         protected IBaseCall Ibase;
 
         [HttpGet]
-        [Route("api/data/[controller]")]
+        [Route("api/data/[controller]/")]
         public IActionResult GetBodyData()
         {
 

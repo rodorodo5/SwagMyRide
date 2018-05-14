@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Xml;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SwagMyRideApi.Services.Services;
+using SwagMyRideApi.Services.Services.Interfaces;
+using Formatting = Newtonsoft.Json.Formatting;
+
 namespace SwagMyRideApi.Api.Controllers
 {
     [Produces("application/json")]
@@ -27,6 +31,13 @@ namespace SwagMyRideApi.Api.Controllers
             }
 
             return Ok("loggedin"); //return data in json with status lable and new uniqid
+
+            var itemToAdd = new JObject();
+            itemToAdd["data"] = bodyData.ToString();
+            itemToAdd["Source"] = "Loggedin";
+            itemToAdd["Token"] = Guid.NewGuid();
+            return Ok(JsonConvert.SerializeObject(itemToAdd, Formatting.Indented));//return data in json with status lable and new uniqid
+
         }
 
     }
