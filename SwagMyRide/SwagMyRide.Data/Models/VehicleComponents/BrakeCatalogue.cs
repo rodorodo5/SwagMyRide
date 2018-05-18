@@ -10,7 +10,7 @@ namespace SwagMyRide.Data.Models.VehicleComponents
     { 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long BreakId { get; set; }
+        public long BrakeId { get; set; }
         [Required]
         [MaxLength(90)]
         public string Name { get; set; }

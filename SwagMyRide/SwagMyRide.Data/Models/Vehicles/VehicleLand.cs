@@ -12,11 +12,12 @@ using SwagMyRide.Data.Models.VehicleData;
 
 namespace SwagMyRide.Data.Models.Vehicles
 {
-    public abstract class Vehicle
+    public  class VehicleLand
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long VehicleId { get; set; }
+        public long VehicleLandId { get; set; }
 
         [Required]
         public long UserProfileId { get; set; }
@@ -30,14 +31,19 @@ namespace SwagMyRide.Data.Models.Vehicles
         public long VehicleYear { get; set; }
 
         [Required]
+        public long TiresId;
+        [Required]
+        public long SuspensionId;
+        [Required]
+        public long WheelId;
+        [Required]
+        public long BrakeId;
+
+
+        [Required]
         public long BodyWorkId { get; set; }
         [ForeignKey("BodyWorkId")]
         public BodyWorkCatalogue BodyWorkCatalogue { get; set; }
-
-        [Required]
-        public long BreakId { get; set; }
-        [ForeignKey("BreakId")]
-        public BreakCatalogue BreakCatalogue { get; set; }
 
         [Required]
         public long CombustibleId { get; set; }
@@ -53,21 +59,7 @@ namespace SwagMyRide.Data.Models.Vehicles
         public long MotorId { get; set; }
         [ForeignKey("MotorId")]
         public MotorCatalogue MotorCatalogue { get; set; }
-
-        [Required]
-        public long SuspensionId { get; set; }
-        [ForeignKey("SuspensionId")]
-        public SuspensionCatalogue SuspensionCatalogue { get; set; }
-
-        [Required]
-        public long TiresId { get; set; }
-        [ForeignKey("TiresId")]
-        public TiresCatalogue TiresCatalogue { get; set; }
-
-        [Required]
-        public long WheelId { get; set; }
-        [ForeignKey("WheelId")]
-        public WheelCatalogue WheelCatalogue { get; set; }
+      
 
         [Required]
         public long VehicleBrandId { get; set; }
@@ -85,9 +77,18 @@ namespace SwagMyRide.Data.Models.Vehicles
         public VehicleType VehicleType { get; set; }
 
         [Required]
+        [MaxLength(8)]
         public string Color { get; set; }
 
-        public abstract string GetPiece();
-        public abstract string GetDescription();
+
+
+
+       
+
+        
+
+      
+
+     
     }
 }

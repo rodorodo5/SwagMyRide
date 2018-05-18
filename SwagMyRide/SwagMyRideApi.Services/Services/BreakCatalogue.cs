@@ -21,7 +21,7 @@ namespace SwagMyRideApi.Services.Services
         public IEnumerable<Service> GetData(int id)
         {
             
-            return _db.BreakCatalogue.Where(x => x.BreakId == id).ToList();
+            return _db.BreakCatalogue.Where(x => x.BrakeId == id).ToList();
         }
 
         public IEnumerable<Service> GetAllData()

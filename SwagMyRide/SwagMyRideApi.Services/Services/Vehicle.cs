@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using SwagMyRide.Data.DataContext;
 using SwagMyRide.Data.Models.VehicleData;
 using SwagMyRide.Data.Models.Vehicles;
+using SwagMyRideApi.Services.Buissnes.CreateNewVehicle.Base;
 using SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses;
-using SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteDecorators;
 using SwagMyRideApi.Services.Services.Interfaces;
 
 namespace SwagMyRideApi.Services.Services
@@ -18,48 +18,28 @@ namespace SwagMyRideApi.Services.Services
     public class Vehicle:IVehicle
     {
         private readonly ApplicationContext _db;
-        private SwagMyRide.Data.Models.Vehicles.Vehicle newVehicle;
         public Vehicle()
         {
             _db = new ApplicationContext();
 
 
         }
-      
-        HttpResponseMessage IVehicle.SavedVehicle(SwagMyRide.Data.Models.Vehicles.Vehicle vehicle)
+
+        public HttpResponseMessage SavedVehicleAir(VehicleAir vehicle)
         {
-            
+            VehicleBuisness vehicleBuisness = new Buissnes.CreateNewVehicle.ConcreteClasses.VehicleAirConcrete(vehicle);
+            return new HttpResponseMessage(HttpStatusCode.Created);
+        }
+        
+        public HttpResponseMessage SavedVehicleLand(VehicleLand vehicle)
+        { 
+            VehicleBuisness vehicleBuisness = new Buissnes.CreateNewVehicle.ConcreteClasses.VehicleLandConcrete(vehicle);
+            return new HttpResponseMessage(HttpStatusCode.Created);
+        }
 
-            if (vehicle.VechileTypeId == (int) VehicleType.VechicleTypes.Air)
-            {
-                newVehicle = new VehicleAir();
-            }
-            if (vehicle.VechileTypeId == (int) VehicleType.VechicleTypes.Land)
-            {
-                 newVehicle = new VehicleLand();
-            }
-            if (vehicle.VechileTypeId == (int)VehicleType.VechicleTypes.Water)
-            {
-                newVehicle = new VehicleWater();
-
-            }
-           
-            newVehicle = new DecoratorBodyWork(vehicle);
-            newVehicle = new DecoratorBreak(vehicle);
-            newVehicle = new DecoratorElectricSystem(vehicle);
-            newVehicle = new DecoratorMotor(vehicle);
-            newVehicle = new DecoratorSuspension(vehicle);
-            newVehicle = new DecoratorTires(vehicle);
-            newVehicle = new DecoratorWheel(vehicle);
-            newVehicle.Color = vehicle.Color;
-            newVehicle.LastModifyTime = vehicle.LastModifyTime;
-            newVehicle.UserProfileId = vehicle.UserProfileId;
-            newVehicle.VehicleYear = vehicle.VehicleYear;
-            newVehicle.VehicleType = vehicle.VehicleType;
-
-
-            _db.Vehicles.Add(newVehicle);
-            _db.SaveChanges();
+        public HttpResponseMessage SavedVehicleWater(VehicleWater vehicle)
+        {
+            VehicleBuisness vehicleBuisness = new Buissnes.CreateNewVehicle.ConcreteClasses.VehicleWaterConcrete(vehicle);
             return new HttpResponseMessage(HttpStatusCode.Created);
         }
     }

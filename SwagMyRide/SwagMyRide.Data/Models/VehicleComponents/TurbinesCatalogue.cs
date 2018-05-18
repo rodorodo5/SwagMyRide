@@ -5,18 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SwagMyRide.Data.Models.VehicleData
+namespace SwagMyRide.Data.Models.VehicleComponents
 {
-
-    public class VehicleType
+    public class TurbinesCatalogue
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public short VehicleTypeId { get; set; }
+        public long TurbinesId { get; set; }
 
-        [Required]
-        [MaxLength(90)]
-        public string VehicleTypeName { get; set; }
+
     }
-
 }

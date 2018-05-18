@@ -33,7 +33,7 @@ namespace SwagMyRide.Data.DataContext
         public DbSet<Country> Country { get; set; }
         public DbSet<State> State { get; set; }
         public DbSet<UserProfile> UserProfile { get; set; }
-        public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<VehicleLand> Vehicles { get; set; }
         public DbSet<VehicleBrand> VehicleBrands { get; set; }
         public DbSet<VehicleModel> VehicleModels { get; set; }
 
