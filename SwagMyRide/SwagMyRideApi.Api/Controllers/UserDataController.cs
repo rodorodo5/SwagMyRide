@@ -32,10 +32,12 @@ namespace SwagMyRideApi.Api.Controllers
 
            /* return Ok("loggedin");*/ //return data in json with status lable and new uniqid
 
-            var itemToAdd = new JObject();
-            itemToAdd["data"] = bodyData.ToString();
-            itemToAdd["Source"] = "Loggedin";
-            itemToAdd["Token"] = Guid.NewGuid();
+            var itemToAdd = new JObject
+            {
+                ["user"] = bodyData.ToList()[0],
+                ["status"] = "Loggedin",
+                ["id"] = Guid.NewGuid()
+            };
             return Ok(JsonConvert.SerializeObject(itemToAdd, Formatting.Indented));//return data in json with status lable and new uniqid
 
         }

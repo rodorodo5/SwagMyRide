@@ -9,11 +9,13 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
     public class VehicleAirConcrete:VehicleBuisness
     {
         private readonly SwagMyRide.Data.Models.Vehicles.VehicleAir _vehicleN;
-        public VehicleAirConcrete(SwagMyRide.Data.Models.Vehicles.VehicleAir vehicle)
+        public VehicleAirConcrete(SwagMyRide.Data.Models.Vehicles.VehicleAir vehicle) : base()
         {
             _vehicleN = vehicle;
             
         }
+
+      
 
         
 
