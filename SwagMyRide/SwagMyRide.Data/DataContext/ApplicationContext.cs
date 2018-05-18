@@ -39,8 +39,8 @@ namespace SwagMyRide.Data.DataContext
         public DbSet<VehicleWater> VehicleWater { get; set; }
         public DbSet<VehicleAir> VehicleAir { get; set; }
         public DbSet<VehicleLand> VehicleLand { get; set; }
-        public DbSet<BoatBladesCatalogue> BoatBladesCatalogues { get; set; }
-        public DbSet<TurbinesCatalogue> TurbinesCatalogues { get; set; }
+        public DbSet<BoatBladesCatalogue> BoatBladesCatalogue { get; set; }
+        public DbSet<TurbinesCatalogue> TurbinesCatalogue { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

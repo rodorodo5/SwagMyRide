@@ -11,9 +11,10 @@ using System;
 namespace SwagMyRide.Data.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20180518080822_ChanginTableNamesBoatTurbine")]
+    partial class ChanginTableNamesBoatTurbine
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -482,8 +483,6 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<long>("Brand");
 
-                    b.Property<long>("CombustibleId");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(255);
@@ -513,8 +512,6 @@ namespace SwagMyRide.Data.Migrations
                     b.HasKey("TurbinesId");
 
                     b.HasIndex("Brand");
-
-                    b.HasIndex("CombustibleId");
 
                     b.HasIndex("Manufactured");
 
@@ -962,11 +959,6 @@ namespace SwagMyRide.Data.Migrations
                     b.HasOne("SwagMyRide.Data.Models.VehicleComponents.BrandCatalogue", "BrandId")
                         .WithMany()
                         .HasForeignKey("Brand")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SwagMyRide.Data.Models.VehicleComponents.CombustibleType", "CombustibleTypeId")
-                        .WithMany()
-                        .HasForeignKey("CombustibleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SwagMyRide.Data.Models.GlobalData.Country", "CountryId")

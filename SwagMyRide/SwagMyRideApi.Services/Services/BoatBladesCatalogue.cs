@@ -18,12 +18,12 @@ namespace SwagMyRideApi.Services.Services
         }
         public IEnumerable<Service> GetData(int id)
         {
-            return _db.BoatBladesCatalogues.Where(x => x.BoatBladesId == id).ToList();
+            return _db.BoatBladesCatalogue.Where(x => x.BoatBladesId == id).ToList();
         }
 
         public IEnumerable<Service> GetAllData()
         {
-            return _db.BoatBladesCatalogues.ToList();
+            return _db.BoatBladesCatalogue.ToList();
         }
     }
 }
