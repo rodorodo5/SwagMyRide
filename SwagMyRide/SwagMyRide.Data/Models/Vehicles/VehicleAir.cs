@@ -38,7 +38,7 @@ namespace SwagMyRide.Data.Models.Vehicles
         [Required]
         public long CombustibleId { get; set; }
         [ForeignKey("CombustibleId")]
-        public CombustibleType CombustibleType { get; set; }
+        public long CombustibleType { get; set; }
 
         [Required]
         public long ElecticSystemId { get; set; }
