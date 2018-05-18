@@ -6,7 +6,7 @@ using SwagMyRide.Data.Services;
 
 namespace SwagMyRide.Data.Models.VehicleComponents
 {
-    public class BreakCatalogue: Service
+    public class BrakeCatalogue: Service
     { 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

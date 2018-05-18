@@ -11,9 +11,10 @@ using System;
 namespace SwagMyRide.Data.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20180518072019_UpdatingComplements")]
+    partial class UpdatingComplements
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,7 +118,7 @@ namespace SwagMyRide.Data.Migrations
 
             modelBuilder.Entity("SwagMyRide.Data.Models.VehicleComponents.BoatBladesCatalogue", b =>
                 {
-                    b.Property<long>("BoatBladesId")
+                    b.Property<long>("MotorId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<bool>("Active");
@@ -150,7 +151,7 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<double>("Weight");
 
-                    b.HasKey("BoatBladesId");
+                    b.HasKey("MotorId");
 
                     b.HasIndex("Brand");
 

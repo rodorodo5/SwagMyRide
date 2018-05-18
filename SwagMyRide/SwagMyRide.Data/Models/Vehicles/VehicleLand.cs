@@ -19,11 +19,7 @@ namespace SwagMyRide.Data.Models.Vehicles
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long VehicleLandId { get; set; }
 
-        [Required]
-        public long UserProfileId { get; set; }
-        [ForeignKey("UserProfileId")]
-        public UserProfile UserProfile { get; set; }
-
+      
         [Required]
         public DateTime LastModifyTime { get; set; }
 
@@ -31,14 +27,33 @@ namespace SwagMyRide.Data.Models.Vehicles
         public long VehicleYear { get; set; }
 
         [Required]
+        [MaxLength(8)]
+        public string Color { get; set; }
+
+        [Required]
         public long TiresId;
+        [ForeignKey("TiresId")]
+        public TiresCatalogue TiresCatalogue { get; set; }
+
         [Required]
         public long SuspensionId;
+        [ForeignKey("SuspensionId")]
+        public SuspensionCatalogue SuspensionCatalogue { get; set; }
+
         [Required]
         public long WheelId;
+        [ForeignKey("WheelId")]
+        public WheelCatalogue WheelCatalogue { get; set; }
+
         [Required]
         public long BrakeId;
+        [ForeignKey("BrakeId")]
+        public BrakeCatalogue BrakeCatalogue { get; set; }
 
+        [Required]
+        public long UserProfileId { get; set; }
+        [ForeignKey("UserProfileId")]
+        public UserProfile UserProfile { get; set; }
 
         [Required]
         public long BodyWorkId { get; set; }
@@ -76,9 +91,7 @@ namespace SwagMyRide.Data.Models.Vehicles
         [ForeignKey("VechileTypeId")]
         public VehicleType VehicleType { get; set; }
 
-        [Required]
-        [MaxLength(8)]
-        public string Color { get; set; }
+    
 
 
 

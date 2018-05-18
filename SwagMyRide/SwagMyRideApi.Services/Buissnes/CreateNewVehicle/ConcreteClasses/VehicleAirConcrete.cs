@@ -8,7 +8,6 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
 {
     public class VehicleAirConcrete:VehicleBuisness
     {
-        public int puertas;
         private readonly SwagMyRide.Data.Models.Vehicles.VehicleAir _vehicleN;
         public VehicleAirConcrete(SwagMyRide.Data.Models.Vehicles.VehicleAir vehicle)
         {
@@ -16,10 +15,7 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
             
         }
 
-        public void SetPuertas()
-        {
-
-        }
+        
 
     }
 

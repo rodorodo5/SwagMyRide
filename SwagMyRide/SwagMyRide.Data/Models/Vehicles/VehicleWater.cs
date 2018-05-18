@@ -28,7 +28,8 @@ namespace SwagMyRide.Data.Models.Vehicles
         public long VehicleYear { get; set; }
 
         [Required]
-        public long BoatBladesId { get; set; }
+        [MaxLength(8)]
+        public string Color { get; set; }
 
         [Required]
         public long BoatBladesCount { get; set; }
@@ -71,7 +72,9 @@ namespace SwagMyRide.Data.Models.Vehicles
         public VehicleType VehicleType { get; set; }
 
         [Required]
-        [MaxLength(8)]
-        public string Color { get; set; }
+        public long BoatBladesId { get; set; }
+        [ForeignKey("BoatBladesId")]
+        public BoatBladesCatalogue BoatBladesCatalogue { get; set; }
+
     }
 }

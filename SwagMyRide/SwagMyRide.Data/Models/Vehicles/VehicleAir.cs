@@ -46,9 +46,9 @@ namespace SwagMyRide.Data.Models.Vehicles
         public ElectricSystemCatalogue ElectricSystemCatalogue { get; set; }
 
         [Required]
-        public long MotorId { get; set; }
-        [ForeignKey("MotorId")]
-        public MotorCatalogue MotorCatalogue { get; set; }
+        public long TurbinesId { get; set; }
+        [ForeignKey("TurbinesId")]
+        public TurbinesCatalogue TurbinesCatalogue { get; set; }
 
 
         [Required]

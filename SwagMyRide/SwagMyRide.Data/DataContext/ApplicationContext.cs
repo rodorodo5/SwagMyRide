@@ -23,7 +23,7 @@ namespace SwagMyRide.Data.DataContext
         public DbSet<City> City { get; set; }
         public DbSet<BodyWorkCatalogue> BodyWorkCatalogue { get; set; }
         public DbSet<BrandCatalogue> BrandCatalogue { get; set; }
-        public DbSet<BreakCatalogue> BreakCatalogue { get; set; }
+        public DbSet<BrakeCatalogue> BreakCatalogue { get; set; }
         public DbSet<CombustibleType> CombustibleType { get; set; }
         public DbSet<ElectricSystemCatalogue> ElectricSystemCatalogue { get; set; }
         public DbSet<MotorCatalogue> MotorCatalogue { get; set; }
@@ -36,6 +36,12 @@ namespace SwagMyRide.Data.DataContext
         public DbSet<VehicleLand> Vehicles { get; set; }
         public DbSet<VehicleBrand> VehicleBrands { get; set; }
         public DbSet<VehicleModel> VehicleModels { get; set; }
+        public DbSet<VehicleWater> VehicleWater { get; set; }
+        public DbSet<VehicleAir> VehicleAir { get; set; }
+        public DbSet<VehicleLand> VehicleLand { get; set; }
+        public DbSet<BoatBladesCatalogue> BoatBladesCatalogues { get; set; }
+        public DbSet<TurbinesCatalogue> TurbinesCatalogues { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
