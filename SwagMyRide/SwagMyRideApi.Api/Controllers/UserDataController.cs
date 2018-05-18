@@ -35,7 +35,7 @@ namespace SwagMyRideApi.Api.Controllers
             var itemToAdd = new JObject
             {
                 ["user"] = bodyData.ToList()[0],
-                ["status"] = "Loggedin",
+                ["status"] = "loggedin",
                 ["id"] = Guid.NewGuid()
             };
             return Ok(JsonConvert.SerializeObject(itemToAdd, Formatting.Indented));//return data in json with status lable and new uniqid
