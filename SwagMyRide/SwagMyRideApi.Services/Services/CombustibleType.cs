@@ -8,7 +8,7 @@ using SwagMyRideApi.Services.Services.Interfaces;
 
 namespace SwagMyRideApi.Services.Services
 {
-    public class CombustibleType:IBaseCall
+    public class CombustibleType:ICombustibleType
     {
         private readonly ApplicationContext _db; 
 
@@ -17,15 +17,16 @@ namespace SwagMyRideApi.Services.Services
             _db = new ApplicationContext();
         } 
     
-        public IEnumerable<Service> GetData(int id)
-        {
-            return _db.CombustibleType.Where(x => x.CombustibleId == id).ToList();
+      
 
-        }
-
-        public IEnumerable<Service> GetAllData()
+        public List<SwagMyRide.Data.Models.VehicleComponents.CombustibleType> GetCombustibleTypes()
         {
             return _db.CombustibleType.ToList();
+        }
+
+        public List<SwagMyRide.Data.Models.VehicleComponents.CombustibleType> GetCombustibleTypesId(int id)
+        {
+            return _db.CombustibleType.Where(x => x.CombustibleId == id).ToList();
         }
     }
 }

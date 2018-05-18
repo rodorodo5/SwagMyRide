@@ -42,5 +42,19 @@ namespace SwagMyRideApi.Api.Controllers
             return Ok(bodyData);
 
         }
+
+        [HttpGet]
+        [Route("api/data/[controller]/type/{id}")]
+        public IActionResult GetPerVehicleType(int id)
+        {
+            var bodyData = Ibase.GetData(id);
+            if (bodyData == null)
+            {
+                return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
+            }
+
+            return Ok(bodyData);
+
+        }
     }
 }

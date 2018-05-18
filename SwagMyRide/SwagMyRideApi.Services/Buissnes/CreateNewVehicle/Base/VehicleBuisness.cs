@@ -19,14 +19,7 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.Base
         public short VechileTypeId { get; set; }
         public string Color { get; set; }
 
-        //protected VehicleBuisness(long vehiId,long userProfileId,DateTime lastModifyTime,long vehicleYear)
-        //{
-        //    VehicleId = vehiId;
-        //    UserProfileId = userProfileId;
-        //    LastModifyTime = lastModifyTime;
-        //    VehicleYear = vehicleYear;
-
-        //}
+    
 
         //public abstract void VehicleType();
         //public abstract void ProvideColor();

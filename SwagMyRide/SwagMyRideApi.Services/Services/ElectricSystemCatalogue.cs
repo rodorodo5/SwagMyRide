@@ -22,6 +22,11 @@ namespace SwagMyRideApi.Services.Services
             return _db.ElectricSystemCatalogue.ToList();
         }
 
+        public IEnumerable<Service> GetPerVehicleType(int id)
+        {
+            return _db.BreakCatalogue.Where(x => x.VechileTypeId == id).ToList();
+        }
+
         IEnumerable<Service> IBaseCall.GetData(int id)
         {
             return _db.ElectricSystemCatalogue.Where(x => x.ElecticSystemId == id).ToList();
