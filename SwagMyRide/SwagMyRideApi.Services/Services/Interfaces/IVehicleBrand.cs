@@ -9,5 +9,7 @@ namespace SwagMyRideApi.Services.Services.Interfaces
     {
         List<SwagMyRide.Data.Models.VehicleData.VehicleBrand> GetVehicleBrands();
         List<SwagMyRide.Data.Models.VehicleData.VehicleBrand> GetVehicleBrand(int id);
+        List<SwagMyRide.Data.Models.VehicleData.VehicleBrand> GetVehicleBrandsType(int id);
+
     }
 }

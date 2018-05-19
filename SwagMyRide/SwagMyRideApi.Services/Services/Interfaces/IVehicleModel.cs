@@ -9,5 +9,7 @@ public interface IVehicleModel
     {
         List<SwagMyRide.Data.Models.VehicleData.VehicleModel> GetVehicleModels();
         List<SwagMyRide.Data.Models.VehicleData.VehicleModel> GetVehicleModel(int id);
+        List<SwagMyRide.Data.Models.VehicleData.VehicleModel> GetVehicleModelType(int id);
+
     }
 }

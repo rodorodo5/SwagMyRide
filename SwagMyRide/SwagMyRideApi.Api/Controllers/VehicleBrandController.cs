@@ -47,5 +47,21 @@ namespace SwagMyRideApi.Api.Controllers
             return Ok(bodyData);
 
         }
+
+        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclebrand/type/{id}")]
+        public IActionResult GetType(int id)
+        {
+            var bodyData = _vehicleBrand.GetVehicleBrandsType(id);
+            if (bodyData == null)
+            {
+                return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
+            }
+
+
+
+            return Ok(bodyData);
+
+        }
     }
 }
