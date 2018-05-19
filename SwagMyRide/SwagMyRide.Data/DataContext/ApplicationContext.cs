@@ -36,16 +36,18 @@ namespace SwagMyRide.Data.DataContext
         public DbSet<VehicleLand> Vehicles { get; set; }
         public DbSet<VehicleBrand> VehicleBrands { get; set; }
         public DbSet<VehicleModel> VehicleModels { get; set; }
-        public DbSet<VehicleWater> VehicleWater { get; set; }
-        public DbSet<VehicleAir> VehicleAir { get; set; }
-        public DbSet<VehicleLand> VehicleLand { get; set; }
+        //public DbSet<VehicleWater> VehicleWater { get; set; }
+        //public DbSet<VehicleAir> VehicleAir { get; set; }
+        //public DbSet<VehicleLand> VehicleLand { get; set; }
         public DbSet<BoatBladesCatalogue> BoatBladesCatalogue { get; set; }
         public DbSet<TurbinesCatalogue> TurbinesCatalogue { get; set; }
-
+        public DbSet<VehicleBase> VehicleBase { get; set; }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=tcp:swagmyridedb.database.windows.net,1433;Initial Catalog=SwagMyRideDB;Persist Security Info=False;User ID='SwagMyRideDB';Password='polloFrito1';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            //optionsBuilder.UseSqlServer(@"Server=tcp:swagmyridedb.database.windows.net,1433;Initial Catalog=SwagMyRideDB;Persist Security Info=False;User ID='SwagMyRideDB';Password='polloFrito1';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            optionsBuilder.UseSqlServer(@"Server = BERENICE\ISAAC; Database = SwagMyRideDB; Trusted_Connection = True;");
         }
     }
 }

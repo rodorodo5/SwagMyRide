@@ -11,36 +11,37 @@ using SwagMyRideApi.Services.Services.Interfaces;
 namespace SwagMyRideApi.Api.Controllers
 {
     [Produces("application/json")]
-    public class CombustibleTypeController : Controller
+    public class VehicleModelController : Controller
     {
-        private readonly ICombustibleType _combustibleType = new CombustibleType();
+        private readonly IVehicleModel _vehicleModel = new VehicleModelCatalogue();
+
         [Microsoft.AspNetCore.Mvc.HttpPost]
-        [Microsoft.AspNetCore.Mvc.Route("api/data/combustibleType/")]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclemodel/")]
         public IActionResult GetAllData()
         {
-            var bodyData = _combustibleType.GetCombustibleTypes();
+            var bodyData = _vehicleModel.GetVehicleModels();
             if (bodyData == null)
             {
                 return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
             }
 
-          
+
 
             return Ok(bodyData);
 
         }
 
         [Microsoft.AspNetCore.Mvc.HttpPost]
-        [Microsoft.AspNetCore.Mvc.Route("api/data/combustibleType/{id}")]
-        public IActionResult GetDataById(int id)
+        [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclemodel/{id}")]
+        public IActionResult GetDataId(int id)
         {
-            var bodyData = _combustibleType.GetCombustibleTypesId(id);
+            var bodyData = _vehicleModel.GetVehicleModel(id);
             if (bodyData == null)
             {
                 return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
             }
 
-            
+
 
             return Ok(bodyData);
 
