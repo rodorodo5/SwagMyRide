@@ -62,5 +62,21 @@ namespace SwagMyRideApi.Api.Controllers
             return Ok(bodyData);
 
         }
+
+        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclemodel/yearmodel/")]
+        public IActionResult GetYearModel()
+        {
+            var bodyData = _vehicleModel.GetYearModels();
+            if (bodyData == null)
+            {
+                return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
+            }
+
+
+
+            return Ok(bodyData);
+
+        }
     }
 }

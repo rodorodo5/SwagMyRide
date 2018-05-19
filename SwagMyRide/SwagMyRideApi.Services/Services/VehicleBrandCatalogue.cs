@@ -22,7 +22,7 @@ namespace SwagMyRideApi.Services.Services
 
         public List<VehicleBrand> GetVehicleBrand(int id)
         {
-            return _db.VehicleBrands.Where(x => x.VehicleTypeId == id).ToList();
+            return _db.VehicleBrands.Where(x => x.VehicleBrandId == id).ToList();
         }
 
         public List<VehicleBrand> GetVehicleBrandsType(int id)
