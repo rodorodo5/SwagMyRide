@@ -14,7 +14,7 @@ namespace SwagMyRideApi.Api.Controllers
     {
         public MotorController()
         {
-            Ibase = new BreakCatalogue();
+            Ibase = new MotorCatalogue();
         }
         
 

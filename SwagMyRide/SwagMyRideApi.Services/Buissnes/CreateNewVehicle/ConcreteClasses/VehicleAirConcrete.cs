@@ -24,13 +24,13 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
             _vehicleAir.TurbinesCount = (short)(_collection["TurbinesCount"]);
             _vehicleAir.SuspensionId = (short)(_collection["SuspensionId"]);
             _vehicleAir.WheelId = (short)(_collection["WheelId"]);
-
         }
 
 
         public void ProvideVehicleBase()
         {
-            _vehicleAir.VehicleBaseId = (long)(_collection["ProvideVehicleBase"]);
+            //
+            
         }
 
         public VehicleBase VehicleService()
@@ -45,7 +45,7 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
 
         public void VehicleType()
         {
-            _vehicleAir.VechileTypeId = (short)(_collection["VehicleTypeId"]);
+            _vehicleAir.VechileTypeId = (short)(_collection["ProvideVehicleType"]);
         }
 
         public void ProvideColor()
@@ -82,7 +82,7 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
 
         public void ProvideBrand()
         {
-            _vehicleAir.VehicleBrandId = (long)(_collection["VehicleBrandId"]);
+            _vehicleAir.VehicleBrandId = (long)(_collection["ProvideVehicleBrandId"]);
         }
 
         public void ProvideVehicleYear()

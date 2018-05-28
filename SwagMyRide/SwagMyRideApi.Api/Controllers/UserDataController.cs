@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using SwagMyRideApi.Services.Buissnes.Authentification.Abstract;
+using SwagMyRideApi.Services.Buissnes.Authentification.ConcreteClasses;
 using SwagMyRideApi.Services.Services;
 using SwagMyRideApi.Services.Services.Interfaces;
 using Formatting = Newtonsoft.Json.Formatting;
@@ -20,27 +22,42 @@ namespace SwagMyRideApi.Api.Controllers
         private readonly IUserProfile _userProfile = new UserProfile();
 
     
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("api/userdata/{email}/{password}")]
         public IActionResult GetBodyData(string email,string password)
         {
+            
             var bodyData = _userProfile.GetPassword(email,password);
             if (bodyData == null)
             {
-                return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
+                return BadRequest();
             }
 
-           /* return Ok("loggedin");*/ //return data in json with status lable and new uniqid
+            AuthResponse getResponse = new Version1(bodyData);
+            var response = getResponse.BuildResponse();
+            return Ok(response);
+            
+        }
 
-            var itemToAdd = new JObject
+        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.Route("api/userdata/add/")]
+        public IActionResult AddUserData([FromBody] SwagMyRide.Data.Models.UserData.UserProfile value)
+        {
+
+            var bodyData = value;
+            if (bodyData == null)
             {
-                ["user"] = bodyData.ToList()[0],
-                ["status"] = "loggedin",
-                ["id"] = Guid.NewGuid()
-            };
-            return Ok(JsonConvert.SerializeObject(itemToAdd, Formatting.Indented));//return data in json with status lable and new uniqid
+                return BadRequest();
+            }
+
+            _userProfile.CreateUser(bodyData);
+
+
+            return Ok();
 
         }
+
+
 
     }
 }

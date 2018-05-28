@@ -73,6 +73,70 @@ namespace SwagMyRide.Data.Migrations
                     b.ToTable("State");
                 });
 
+            modelBuilder.Entity("SwagMyRide.Data.Models.StoreComponents.MethodProvider", b =>
+                {
+                    b.Property<long>("MethodProviderId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("DeliveryDay");
+
+                    b.Property<string>("Image")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<double>("ServiceCost");
+
+                    b.HasKey("MethodProviderId");
+
+                    b.ToTable("MethodProvider");
+                });
+
+            modelBuilder.Entity("SwagMyRide.Data.Models.StoreComponents.ProvidersComponents", b =>
+                {
+                    b.Property<long>("ProvidersId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<long>("Brand");
+
+                    b.Property<short>("GuaranteedDays");
+
+                    b.Property<string>("Image")
+                        .IsRequired();
+
+                    b.Property<long>("MethodProviderId");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<double>("ServiceCost");
+
+                    b.HasKey("ProvidersId");
+
+                    b.HasIndex("Brand");
+
+                    b.HasIndex("MethodProviderId");
+
+                    b.ToTable("ProvidersComponents");
+                });
+
+            modelBuilder.Entity("SwagMyRide.Data.Models.UserData.OrderList", b =>
+                {
+                    b.Property<long>("OrderListId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("LastOrderDate");
+
+                    b.Property<long>("UserProfileId");
+
+                    b.HasKey("OrderListId");
+
+                    b.HasIndex("UserProfileId");
+
+                    b.ToTable("OrderList");
+                });
+
             modelBuilder.Entity("SwagMyRide.Data.Models.UserData.UserProfile", b =>
                 {
                     b.Property<long>("UserProfileId")
@@ -149,6 +213,8 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<short>("VechileTypeId");
 
+                    b.Property<long>("VehicleModelId");
+
                     b.Property<double>("Weight");
 
                     b.HasKey("BoatBladesId");
@@ -160,6 +226,8 @@ namespace SwagMyRide.Data.Migrations
                     b.HasIndex("Manufactured");
 
                     b.HasIndex("VechileTypeId");
+
+                    b.HasIndex("VehicleModelId");
 
                     b.ToTable("BoatBladesCatalogue");
                 });
@@ -197,6 +265,8 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<short>("VechileTypeId");
 
+                    b.Property<long>("VehicleModelId");
+
                     b.Property<double>("Weight");
 
                     b.HasKey("BodyWorkId");
@@ -206,6 +276,8 @@ namespace SwagMyRide.Data.Migrations
                     b.HasIndex("Manufactured");
 
                     b.HasIndex("VechileTypeId");
+
+                    b.HasIndex("VehicleModelId");
 
                     b.ToTable("BodyWorkCatalogue");
                 });
@@ -241,6 +313,8 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<short>("VechileTypeId");
 
+                    b.Property<long>("VehicleModelId");
+
                     b.Property<double>("Weight");
 
                     b.HasKey("BrakeId");
@@ -250,6 +324,8 @@ namespace SwagMyRide.Data.Migrations
                     b.HasIndex("Manufactured");
 
                     b.HasIndex("VechileTypeId");
+
+                    b.HasIndex("VehicleModelId");
 
                     b.ToTable("BreakCatalogue");
                 });
@@ -325,6 +401,8 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<short>("VechileTypeId");
 
+                    b.Property<long>("VehicleModelId");
+
                     b.Property<double>("Volts");
 
                     b.HasKey("ElecticSystemId");
@@ -334,6 +412,8 @@ namespace SwagMyRide.Data.Migrations
                     b.HasIndex("Manufactured");
 
                     b.HasIndex("VechileTypeId");
+
+                    b.HasIndex("VehicleModelId");
 
                     b.ToTable("ElectricSystemCatalogue");
                 });
@@ -373,6 +453,8 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<short>("VechileTypeId");
 
+                    b.Property<long>("VehicleModelId");
+
                     b.Property<double>("Weight");
 
                     b.HasKey("MotorId");
@@ -384,6 +466,8 @@ namespace SwagMyRide.Data.Migrations
                     b.HasIndex("Manufactured");
 
                     b.HasIndex("VechileTypeId");
+
+                    b.HasIndex("VehicleModelId");
 
                     b.ToTable("MotorCatalogue");
                 });
@@ -417,6 +501,8 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<short>("VechileTypeId");
 
+                    b.Property<long>("VehicleModelId");
+
                     b.Property<double>("Weight");
 
                     b.HasKey("SuspensionId");
@@ -426,6 +512,8 @@ namespace SwagMyRide.Data.Migrations
                     b.HasIndex("Manufactured");
 
                     b.HasIndex("VechileTypeId");
+
+                    b.HasIndex("VehicleModelId");
 
                     b.ToTable("SuspensionCatalogue");
                 });
@@ -461,6 +549,8 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<short>("VechileTypeId");
 
+                    b.Property<long>("VehicleModelId");
+
                     b.Property<double>("Weight");
 
                     b.HasKey("TiresId");
@@ -470,6 +560,8 @@ namespace SwagMyRide.Data.Migrations
                     b.HasIndex("Manufactured");
 
                     b.HasIndex("VechileTypeId");
+
+                    b.HasIndex("VehicleModelId");
 
                     b.ToTable("TiresCatalogue");
                 });
@@ -509,6 +601,8 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<short>("VechileTypeId");
 
+                    b.Property<long>("VehicleModelId");
+
                     b.Property<double>("Weight");
 
                     b.HasKey("TurbinesId");
@@ -520,6 +614,8 @@ namespace SwagMyRide.Data.Migrations
                     b.HasIndex("Manufactured");
 
                     b.HasIndex("VechileTypeId");
+
+                    b.HasIndex("VehicleModelId");
 
                     b.ToTable("TurbinesCatalogue");
                 });
@@ -555,6 +651,8 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<short>("VechileTypeId");
 
+                    b.Property<long>("VehicleModelId");
+
                     b.Property<double>("Weight");
 
                     b.HasKey("WheelId");
@@ -564,6 +662,8 @@ namespace SwagMyRide.Data.Migrations
                     b.HasIndex("Manufactured");
 
                     b.HasIndex("VechileTypeId");
+
+                    b.HasIndex("VehicleModelId");
 
                     b.ToTable("WheelCatalogue");
                 });
@@ -656,23 +756,26 @@ namespace SwagMyRide.Data.Migrations
 
                     b.HasKey("VehicleBaseId");
 
-                    b.HasIndex("BodyWorkId");
-
-                    b.HasIndex("CombustibleId");
-
-                    b.HasIndex("ElecticSystemId");
-
-                    b.HasIndex("UserProfileId");
-
-                    b.HasIndex("VechileTypeId");
-
-                    b.HasIndex("VehicleBrandId");
-
-                    b.HasIndex("VehicleModelId");
-
                     b.ToTable("VehicleBase");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("VehicleBase");
+                });
+
+            modelBuilder.Entity("SwagMyRide.Data.Models.Vehicles.VehicleAir", b =>
+                {
+                    b.HasBaseType("SwagMyRide.Data.Models.Vehicles.VehicleBase");
+
+                    b.Property<long>("SuspensionId");
+
+                    b.Property<short>("TurbinesCount");
+
+                    b.Property<long>("TurbinesId");
+
+                    b.Property<long>("WheelId");
+
+                    b.ToTable("VehicleAir");
+
+                    b.HasDiscriminator().HasValue("VehicleAir");
                 });
 
             modelBuilder.Entity("SwagMyRide.Data.Models.Vehicles.VehicleLand", b =>
@@ -683,29 +786,33 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<long>("MotorId");
 
-                    b.Property<long>("SuspensionId");
+                    b.Property<long>("SuspensionId")
+                        .HasColumnName("VehicleLand_SuspensionId");
 
                     b.Property<long>("TiresId");
 
-                    b.Property<long?>("VehicleBaseId1");
-
-                    b.Property<long>("WheelId");
-
-                    b.HasIndex("BrakeId");
-
-                    b.HasIndex("MotorId");
-
-                    b.HasIndex("SuspensionId");
-
-                    b.HasIndex("TiresId");
-
-                    b.HasIndex("VehicleBaseId1");
-
-                    b.HasIndex("WheelId");
+                    b.Property<long>("WheelId")
+                        .HasColumnName("VehicleLand_WheelId");
 
                     b.ToTable("VehicleLand");
 
                     b.HasDiscriminator().HasValue("VehicleLand");
+                });
+
+            modelBuilder.Entity("SwagMyRide.Data.Models.Vehicles.VehicleWater", b =>
+                {
+                    b.HasBaseType("SwagMyRide.Data.Models.Vehicles.VehicleBase");
+
+                    b.Property<long>("BoatBladesCount");
+
+                    b.Property<long>("BoatBladesId");
+
+                    b.Property<long>("MotorId")
+                        .HasColumnName("VehicleWater_MotorId");
+
+                    b.ToTable("VehicleWater");
+
+                    b.HasDiscriminator().HasValue("VehicleWater");
                 });
 
             modelBuilder.Entity("SwagMyRide.Data.Models.GlobalData.State", b =>
@@ -713,6 +820,27 @@ namespace SwagMyRide.Data.Migrations
                     b.HasOne("SwagMyRide.Data.Models.GlobalData.Country", "CountryId")
                         .WithMany()
                         .HasForeignKey("Country")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SwagMyRide.Data.Models.StoreComponents.ProvidersComponents", b =>
+                {
+                    b.HasOne("SwagMyRide.Data.Models.VehicleComponents.BrandCatalogue", "BrandId")
+                        .WithMany()
+                        .HasForeignKey("Brand")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SwagMyRide.Data.Models.StoreComponents.MethodProvider", "MethodProvider")
+                        .WithMany()
+                        .HasForeignKey("MethodProviderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SwagMyRide.Data.Models.UserData.OrderList", b =>
+                {
+                    b.HasOne("SwagMyRide.Data.Models.UserData.UserProfile", "UserProfile")
+                        .WithMany()
+                        .HasForeignKey("UserProfileId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -745,6 +873,11 @@ namespace SwagMyRide.Data.Migrations
                         .WithMany()
                         .HasForeignKey("VechileTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleModel", "VehicleModel")
+                        .WithMany()
+                        .HasForeignKey("VehicleModelId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("SwagMyRide.Data.Models.VehicleComponents.BodyWorkCatalogue", b =>
@@ -763,6 +896,11 @@ namespace SwagMyRide.Data.Migrations
                         .WithMany()
                         .HasForeignKey("VechileTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleModel", "VehicleModel")
+                        .WithMany()
+                        .HasForeignKey("VehicleModelId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("SwagMyRide.Data.Models.VehicleComponents.BrakeCatalogue", b =>
@@ -780,6 +918,11 @@ namespace SwagMyRide.Data.Migrations
                     b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleType", "VehicleType")
                         .WithMany()
                         .HasForeignKey("VechileTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleModel", "VehicleModel")
+                        .WithMany()
+                        .HasForeignKey("VehicleModelId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -807,6 +950,11 @@ namespace SwagMyRide.Data.Migrations
                         .WithMany()
                         .HasForeignKey("VechileTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleModel", "VehicleModel")
+                        .WithMany()
+                        .HasForeignKey("VehicleModelId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("SwagMyRide.Data.Models.VehicleComponents.MotorCatalogue", b =>
@@ -830,6 +978,11 @@ namespace SwagMyRide.Data.Migrations
                         .WithMany()
                         .HasForeignKey("VechileTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleModel", "VehicleModel")
+                        .WithMany()
+                        .HasForeignKey("VehicleModelId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("SwagMyRide.Data.Models.VehicleComponents.SuspensionCatalogue", b =>
@@ -848,6 +1001,11 @@ namespace SwagMyRide.Data.Migrations
                         .WithMany()
                         .HasForeignKey("VechileTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleModel", "VehicleModel")
+                        .WithMany()
+                        .HasForeignKey("VehicleModelId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("SwagMyRide.Data.Models.VehicleComponents.TiresCatalogue", b =>
@@ -865,6 +1023,11 @@ namespace SwagMyRide.Data.Migrations
                     b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleType", "VehicleType")
                         .WithMany()
                         .HasForeignKey("VechileTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleModel", "VehicleModel")
+                        .WithMany()
+                        .HasForeignKey("VehicleModelId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -889,6 +1052,11 @@ namespace SwagMyRide.Data.Migrations
                         .WithMany()
                         .HasForeignKey("VechileTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleModel", "VehicleModel")
+                        .WithMany()
+                        .HasForeignKey("VehicleModelId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("SwagMyRide.Data.Models.VehicleComponents.WheelCatalogue", b =>
@@ -906,6 +1074,11 @@ namespace SwagMyRide.Data.Migrations
                     b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleType", "VehicleType")
                         .WithMany()
                         .HasForeignKey("VechileTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleModel", "VehicleModel")
+                        .WithMany()
+                        .HasForeignKey("VehicleModelId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -927,76 +1100,6 @@ namespace SwagMyRide.Data.Migrations
                     b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleType", "VehicleType")
                         .WithMany()
                         .HasForeignKey("VehicleTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("SwagMyRide.Data.Models.Vehicles.VehicleBase", b =>
-                {
-                    b.HasOne("SwagMyRide.Data.Models.VehicleComponents.BodyWorkCatalogue", "BodyWorkCatalogue")
-                        .WithMany()
-                        .HasForeignKey("BodyWorkId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SwagMyRide.Data.Models.VehicleComponents.CombustibleType", "CombustibleType")
-                        .WithMany()
-                        .HasForeignKey("CombustibleId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SwagMyRide.Data.Models.VehicleComponents.ElectricSystemCatalogue", "ElectricSystemCatalogue")
-                        .WithMany()
-                        .HasForeignKey("ElecticSystemId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SwagMyRide.Data.Models.UserData.UserProfile", "UserProfile")
-                        .WithMany()
-                        .HasForeignKey("UserProfileId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleType", "VehicleType")
-                        .WithMany()
-                        .HasForeignKey("VechileTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleBrand", "VehicleBrand")
-                        .WithMany()
-                        .HasForeignKey("VehicleBrandId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SwagMyRide.Data.Models.VehicleData.VehicleModel", "VehicleModel")
-                        .WithMany()
-                        .HasForeignKey("VehicleModelId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("SwagMyRide.Data.Models.Vehicles.VehicleLand", b =>
-                {
-                    b.HasOne("SwagMyRide.Data.Models.VehicleComponents.BrakeCatalogue", "BrakeCatalogue")
-                        .WithMany()
-                        .HasForeignKey("BrakeId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SwagMyRide.Data.Models.VehicleComponents.MotorCatalogue", "MotorCatalogue")
-                        .WithMany()
-                        .HasForeignKey("MotorId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SwagMyRide.Data.Models.VehicleComponents.SuspensionCatalogue", "SuspensionCatalogue")
-                        .WithMany()
-                        .HasForeignKey("SuspensionId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SwagMyRide.Data.Models.VehicleComponents.TiresCatalogue", "TiresCatalogue")
-                        .WithMany()
-                        .HasForeignKey("TiresId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SwagMyRide.Data.Models.Vehicles.VehicleBase", "VehicleBase")
-                        .WithMany()
-                        .HasForeignKey("VehicleBaseId1");
-
-                    b.HasOne("SwagMyRide.Data.Models.VehicleComponents.WheelCatalogue", "WheelCatalogue")
-                        .WithMany()
-                        .HasForeignKey("WheelId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

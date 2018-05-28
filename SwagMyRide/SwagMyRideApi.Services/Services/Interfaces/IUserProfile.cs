@@ -1,9 +1,12 @@
 ﻿using System.Linq;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
 namespace SwagMyRideApi.Services.Services.Interfaces
 {
    public interface IUserProfile
     {
-        IQueryable<string> GetPassword(string email, string password);
+        string GetPassword(string email, string password);
+        HttpResponseMessage CreateUser(SwagMyRide.Data.Models.UserData.UserProfile user);
     }
 }

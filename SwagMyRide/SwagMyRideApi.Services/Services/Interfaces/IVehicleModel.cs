@@ -11,6 +11,8 @@ public interface IVehicleModel
         List<SwagMyRide.Data.Models.VehicleData.VehicleModel> GetVehicleModel(int id);
         List<SwagMyRide.Data.Models.VehicleData.VehicleModel> GetVehicleModelType(int id);
         List<short> GetYearModels();
+        int GetVehicleModelIdByYear(int id);
+        List<SwagMyRide.Data.Models.VehicleData.VehicleModel> GetVehicleModelsByBrandId(int id);
 
     }
 }

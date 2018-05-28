@@ -16,7 +16,7 @@ namespace SwagMyRideApi.Api.Controllers
     {
         private readonly IVehicleBrand _vehicleBrand = new VehicleBrandCatalogue();
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclebrand/")]
         public IActionResult GetAllData()
         {
@@ -32,7 +32,7 @@ namespace SwagMyRideApi.Api.Controllers
 
         }
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclebrand/{id}")]
         public IActionResult GetDataId(int id)
         {
@@ -48,7 +48,7 @@ namespace SwagMyRideApi.Api.Controllers
 
         }
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclebrand/type/{id}")]
         public IActionResult GetType(int id)
         {

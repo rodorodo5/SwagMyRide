@@ -14,7 +14,7 @@ namespace SwagMyRideApi.Api.Controllers
     public class CombustibleTypeController : Controller
     {
         private readonly ICombustibleType _combustibleType = new CombustibleType();
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("api/data/combustibleType/")]
         public IActionResult GetAllData()
         {
@@ -30,7 +30,7 @@ namespace SwagMyRideApi.Api.Controllers
 
         }
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("api/data/combustibleType/{id}")]
         public IActionResult GetDataById(int id)
         {

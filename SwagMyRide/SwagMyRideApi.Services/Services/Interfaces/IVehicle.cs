@@ -14,7 +14,11 @@ namespace SwagMyRideApi.Services.Services.Interfaces
    public interface IVehicle
     {
         HttpResponseMessage SavedVehicle(JObject vehicleObject);
-     
-       
+        HttpResponseMessage UpdateVehicle(SwagMyRide.Data.Models.Vehicles.VehicleBase vehicleObject);
+        List<SwagMyRide.Data.Models.Vehicles.VehicleBase> GetAllData();
+        List<SwagMyRide.Data.Models.Vehicles.VehicleBase> GetDataPerId(int id);
+        List<SwagMyRide.Data.Models.Vehicles.VehicleBase> GetDataPerUser(int id);
+        List<SwagMyRide.Data.Models.Vehicles.VehicleBase> GetDataPerTypeUser(int id,int userid);
+        List<SwagMyRide.Data.Models.Vehicles.VehicleBase> GetDataPerBaseId(int id);
     }
 }

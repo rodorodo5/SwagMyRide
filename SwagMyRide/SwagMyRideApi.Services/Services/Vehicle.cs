@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 using SwagMyRide.Data.DataContext;
 using SwagMyRide.Data.Models.VehicleData;
@@ -29,8 +32,6 @@ namespace SwagMyRideApi.Services.Services
 
         }
 
-
-
         public HttpResponseMessage SavedVehicle(JObject vehicleObject)
         {
             IVehicleBuilder vehicleBuilder;
@@ -47,6 +48,7 @@ namespace SwagMyRideApi.Services.Services
                 vehicleBuilder = new VehicleLandConcrete(vehicleObject);
                 director.Construct(vehicleBuilder);
                 vehicleBase = (VehicleLand)vehicleBuilder.VehicleService();
+                
             }
             if ((short)vehicleObject["ProvideVehicleType"] == (short)EnumVehicleType.VehicleType.Water)
             {
@@ -55,8 +57,54 @@ namespace SwagMyRideApi.Services.Services
                 vehicleBase = (VehicleWater)vehicleBuilder.VehicleService();
             }
 
-             _db.VehicleBase.Add(vehicleBase ?? throw new InvalidOperationException());
+            _db.VehicleBase.Add(vehicleBase ?? throw new InvalidOperationException());
+            _db.SaveChanges();
             return new HttpResponseMessage(HttpStatusCode.Created);
+        }
+
+        public HttpResponseMessage UpdateVehicle(SwagMyRide.Data.Models.Vehicles.VehicleBase vehicleObject)
+        {
+            var data = vehicleObject;
+            if (data == null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+            try
+            {
+                _db.Entry(data).State = EntityState.Modified;
+                _db.SaveChanges();
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            catch (Exception e)
+            {
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+        }
+
+        public List<VehicleBase> GetAllData()
+        {
+            return _db.VehicleBase.ToList();
+        }
+
+        public List<VehicleBase> GetDataPerId(int id)
+        {
+            return _db.VehicleBase.Where(x => x.VehicleBaseId == id).ToList();
+        }
+
+        public List<VehicleBase> GetDataPerUser(int id)
+        {
+            return _db.VehicleBase.Where(x => x.UserProfileId == id).ToList();
+        }
+
+        public List<VehicleBase> GetDataPerTypeUser(int id,int userid)
+        {
+            return _db.VehicleBase.Where(x => x.VechileTypeId == id && x.UserProfileId == userid).ToList();
+        }
+
+        public List<VehicleBase> GetDataPerBaseId(int id)
+        {
+            return _db.VehicleBase.Where(x => x.VehicleBaseId == id).ToList();
         }
     }
 }

@@ -27,6 +27,6 @@ namespace SwagMyRide.Data.Models.VehicleData
         [Required]
         public short VehicleTypeId { get; set; }
         [ForeignKey("VehicleTypeId")]
-        public VehicleType VehicleType { get; set; }
+        public virtual VehicleType VehicleType { get; set; }
     }
 }

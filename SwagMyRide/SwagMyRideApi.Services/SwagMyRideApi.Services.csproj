@@ -15,8 +15,4 @@
   <ItemGroup>
     <Compile Remove="Startup.cs" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Buissnes\Store\" />
-  </ItemGroup>
 </Project>

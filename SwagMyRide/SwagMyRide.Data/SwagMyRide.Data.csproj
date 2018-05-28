@@ -5,6 +5,12 @@
   <ItemGroup>
     <Compile Remove="Migrations\20180513223528_AddingVehicleModel.cs" />
     <Compile Remove="Migrations\20180513223528_AddingVehicleModel.Designer.cs" />
+    <Compile Remove="Migrations\20180525074432_AddingVehicleModelToComponents.cs" />
+    <Compile Remove="Migrations\20180525074432_AddingVehicleModelToComponents.Designer.cs" />
+    <Compile Remove="Migrations\20180525225938_AddingNewModels.cs" />
+    <Compile Remove="Migrations\20180525225938_AddingNewModels.Designer.cs" />
+    <Compile Remove="Migrations\20180528095328_AddingOrderListModel.cs" />
+    <Compile Remove="Migrations\20180528095328_AddingOrderListModel.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />

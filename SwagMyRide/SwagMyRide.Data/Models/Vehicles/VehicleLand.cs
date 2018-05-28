@@ -20,36 +20,24 @@ namespace SwagMyRide.Data.Models.Vehicles
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         //public long VehicleLandId { get; set; }
 
-        [Required]
-        public new long VehicleBaseId { get; set; }
-        [ForeignKey("VehicleBaseId")]
-        public VehicleBase VehicleBase { get; set; }
+        //[Required]
+        //public new long VehicleBaseId { get; set; }
+        //[ForeignKey("VehicleBaseId")]
+        //public VehicleBase VehicleBase { get; set; }
       
-        [Required]
-        public long TiresId;
-        [ForeignKey("TiresId")]
-        public TiresCatalogue TiresCatalogue { get; set; }
-
-        [Required]
-        public long SuspensionId;
-        [ForeignKey("SuspensionId")]
-        public SuspensionCatalogue SuspensionCatalogue { get; set; }
-
-        [Required]
-        public long WheelId;
-        [ForeignKey("WheelId")]
-        public WheelCatalogue WheelCatalogue { get; set; }
-
-        [Required]
-        public long BrakeId;
-        [ForeignKey("BrakeId")]
-        public BrakeCatalogue BrakeCatalogue { get; set; }
+        public long TiresId { get; set; }
        
-        [Required]
-        public long MotorId { get; set; }
-        [ForeignKey("MotorId")]
-        public MotorCatalogue MotorCatalogue { get; set; }
 
+        public long SuspensionId { get; set; }
+       
+
+        public long WheelId { get; set; }
+       
+
+        public long BrakeId { get; set; }
+       
+        public long MotorId { get; set; }
+       
      
     }
 }

@@ -36,6 +36,14 @@ namespace SwagMyRideApi.Services.Services
             return _db.VehicleModels.Select(x => x.VehicleYearModel).ToList();
         }
 
-      
+        public int GetVehicleModelIdByYear(int id)
+        {
+            return int.Parse(_db.VehicleModels.FirstOrDefault(x => x.VehicleYearModel == id)?.VehicleModelId.ToString());
+        }
+
+        public List<VehicleModel> GetVehicleModelsByBrandId(int id)
+        {
+            return _db.VehicleModels.Where(x => x.VehicleBrandlId == id).ToList();
+        }
     }
 }

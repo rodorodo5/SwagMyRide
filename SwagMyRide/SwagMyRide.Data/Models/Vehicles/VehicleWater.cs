@@ -17,26 +17,21 @@ namespace SwagMyRide.Data.Models.Vehicles
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         //public long VehicleWaterId { get; set; }
 
-        [Required]
-        public new long VehicleBaseId { get; set; }
-        [ForeignKey("VehicleBaseId")]
-        public VehicleBase VehicleBase { get; set; }
+        //[Required]
+        //public new long VehicleBaseId { get; set; }
+        //[ForeignKey("VehicleBaseId")]
+        //public VehicleBase VehicleBase { get; set; }
 
 
-        [Required]
         public long BoatBladesCount { get; set; }
 
 
-        [Required]
         public long MotorId { get; set; }
-        [ForeignKey("MotorId")]
-        public MotorCatalogue MotorCatalogue { get; set; }
+       
 
 
-        [Required]
         public long BoatBladesId { get; set; }
-        [ForeignKey("BoatBladesId")]
-        public BoatBladesCatalogue BoatBladesCatalogue { get; set; }
+       
 
     }
 }

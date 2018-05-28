@@ -21,13 +21,12 @@ namespace SwagMyRideApi.Api.Controllers
         private readonly IVehicle _vehicles = new Vehicle();
 
         [Microsoft.AspNetCore.Mvc.HttpPost]
-        [Microsoft.AspNetCore.Mvc.Route("api/data/vehicle/{vehicleObject}")]
-        public IActionResult SavedVehicle(HttpResponseMessage vehicleObject)
+        [Microsoft.AspNetCore.Mvc.Route("api/data/vehicle/")]
+        public IActionResult SavedVehicle([FromBody] string value)
         {
-            var content = vehicleObject.Content;
+            dynamic json = JsonConvert.DeserializeObject(value);
           
-                  var data = JObject.Parse(content.ToString());
-                var bodyData = _vehicles.SavedVehicle(data);
+                var bodyData = _vehicles.SavedVehicle(json);
                 if (bodyData == null)
                 {
                     return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
@@ -38,29 +37,59 @@ namespace SwagMyRideApi.Api.Controllers
             return Ok();
         }
 
-        //[Microsoft.AspNetCore.Mvc.HttpPost]
-        //[Microsoft.AspNetCore.Mvc.Route("api/data/VehicleLand/{vehicle}")]
-        //public IActionResult SavedVehicleLand(VehicleLand vehicleLand)
-        //{
-        //    var bodyData = _vehicles.SavedVehicleLand(vehicleLand);
-        //    if (bodyData == null)
-        //    {
-        //        return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
-        //    }
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/vehicle/user/{id}")]
+        public IActionResult GetDataPerUser(int id)
+        {
+            
+            var bodyData = _vehicles.GetDataPerUser(id);
+            if (bodyData == null)
+            {
+                return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
+            }
+            return Ok(bodyData);
+        }
 
-        //    return Ok();
-        //}
-        //[Microsoft.AspNetCore.Mvc.HttpPost]
-        //[Microsoft.AspNetCore.Mvc.Route("api/data/VehicleWater/{vehicle}")]
-        //public IActionResult SavedVehicleWater(VehicleWater vehicleWater)
-        //{
-        //    var bodyData = _vehicles.SavedVehicleWater(vehicleWater);
-        //    if (bodyData == null)
-        //    {
-        //        return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
-        //    }
 
-        //    return Ok();
-        //}
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/vehicle/{id}")]
+        public IActionResult GetDataPerId(int id)
+        {
+
+            var bodyData = _vehicles.GetDataPerId(id);
+            if (bodyData == null)
+            {
+                return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
+            }
+            return Ok(bodyData);
+        }
+
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/vehicle/typeuser/{id}/{userid}/")]
+        public IActionResult GetDataPerUserType(int id,int userid)
+        {
+
+            var bodyData = _vehicles.GetDataPerTypeUser(id,userid);
+            if (bodyData == null)
+            {
+                return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
+            }
+            return Ok(bodyData);
+        }
+
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/vehicle/base/{id}/")]
+        public IActionResult GetDataPerBaseId(int id)
+        {
+
+            var bodyData = _vehicles.GetDataPerBaseId(id);
+            if (bodyData == null)
+            {
+                return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
+            }
+            return Ok(bodyData);
+        }
+
+
     }
 }

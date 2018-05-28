@@ -15,7 +15,7 @@ namespace SwagMyRideApi.Api.Controllers
     {
         private readonly IVehicleModel _vehicleModel = new VehicleModelCatalogue();
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclemodel/")]
         public IActionResult GetAllData()
         {
@@ -31,7 +31,7 @@ namespace SwagMyRideApi.Api.Controllers
 
         }
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclemodel/{id}")]
         public IActionResult GetDataId(int id)
         {
@@ -47,7 +47,7 @@ namespace SwagMyRideApi.Api.Controllers
 
         }
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclemodel/type/{id}")]
         public IActionResult GetType(int id)
         {
@@ -63,7 +63,7 @@ namespace SwagMyRideApi.Api.Controllers
 
         }
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclemodel/yearmodel/")]
         public IActionResult GetYearModel()
         {
@@ -78,5 +78,29 @@ namespace SwagMyRideApi.Api.Controllers
             return Ok(bodyData);
 
         }
+
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclemodel/yearmodel/{id}")]
+        public IActionResult GetModelIdByYear(int id)
+        {
+            var bodyData = _vehicleModel.GetVehicleModelIdByYear(id);
+
+
+            return Ok(bodyData);
+
+        }
+
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/vehiclemodel/brandid/{id}")]
+        public IActionResult GetModelByBrand(int id)
+        {
+            var bodyData = _vehicleModel.GetVehicleModelsByBrandId(id);
+
+
+            return Ok(bodyData);
+
+        }
+
+
     }
 }

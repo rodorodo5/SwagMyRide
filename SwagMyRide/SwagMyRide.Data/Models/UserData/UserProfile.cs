@@ -25,7 +25,7 @@ namespace SwagMyRide.Data.Models.UserData
         public DateTime RegisterDate { get; set; }
         [Required]
         public DateTime Brithday { get; set; }
-        [Required]
+        [Required]  
         public short Age { get; set; }
         [Required]
         [MaxLength(1)]
