@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Net.Http;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 
 namespace SwagMyRideApi.Services.Services.Interfaces

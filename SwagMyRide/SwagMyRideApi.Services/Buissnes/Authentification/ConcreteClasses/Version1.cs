@@ -12,20 +12,22 @@ namespace SwagMyRideApi.Services.Buissnes.Authentification.ConcreteClasses
     {
         private JObject _json;
         private readonly string _userName;
+        private readonly string _userid;
     
         public Version1(string username)
         {
 
-            _userName = username;
+            _userName = username.Split(',')[0].Split("=").Last().Replace(" ",string.Empty);
+            _userid = username.Split(",")[1].Split("=").Last().Replace(" ",string.Empty).Replace("}",string.Empty);
         }
    
         public override string BuildResponse()
         {
             _json = new JObject()
             {
-                ["user"] = _userName,
-                ["status"] = "loggeind",
-                ["id"] = Guid.NewGuid()
+                ["user"] =_userName,
+                ["status"]="loggedin",
+                 ["id"]= _userid
             };
 
             var response = JsonConvert.SerializeObject(_json, Formatting.Indented);

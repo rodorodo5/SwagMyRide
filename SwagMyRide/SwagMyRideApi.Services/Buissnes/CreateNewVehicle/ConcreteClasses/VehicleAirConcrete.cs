@@ -67,7 +67,7 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
 
         public void ProvideLastModifyTime()
         {
-            _vehicleAir.LastModifyTime = (DateTime)(_collection["ProvideLastModifyTime"]);
+            _vehicleAir.LastModifyTime = DateTime.UtcNow;
         }
 
         public void ProvideCombustibleId()

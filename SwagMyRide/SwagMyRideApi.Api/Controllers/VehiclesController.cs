@@ -13,6 +13,9 @@ using SwagMyRide.Data.Models.Vehicles;
 using SwagMyRideApi.Services.Buissnes.CreateNewVehicle.Enum;
 using SwagMyRideApi.Services.Services;
 using SwagMyRideApi.Services.Services.Interfaces;
+using System.Net.Http.Formatting;
+using System.Text;
+
 namespace SwagMyRideApi.Api.Controllers
 {
     [Produces("application/json")]
@@ -22,11 +25,13 @@ namespace SwagMyRideApi.Api.Controllers
 
         [Microsoft.AspNetCore.Mvc.HttpPost]
         [Microsoft.AspNetCore.Mvc.Route("api/data/vehicle/")]
-        public IActionResult SavedVehicle([FromBody] string value)
+        public IActionResult SavedVehicle([FromBody]dynamic data)
         {
-            dynamic json = JsonConvert.DeserializeObject(value);
-          
-                var bodyData = _vehicles.SavedVehicle(json);
+            
+
+            dynamic json = JsonConvert.DeserializeObject(data.ToString());
+
+            var bodyData = _vehicles.SavedVehicle(json);
                 if (bodyData == null)
                 {
                     return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
@@ -34,7 +39,7 @@ namespace SwagMyRideApi.Api.Controllers
             
           
 
-            return Ok();
+            return Ok("Success");
         }
 
         [Microsoft.AspNetCore.Mvc.HttpGet]
@@ -83,6 +88,19 @@ namespace SwagMyRideApi.Api.Controllers
         {
 
             var bodyData = _vehicles.GetDataPerBaseId(id);
+            if (bodyData == null)
+            {
+                return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
+            }
+            return Ok(bodyData);
+        }
+
+        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/vehicle/updatevehicle/")]
+        public IActionResult UpdateVehiclePerBaseId([FromBody]dynamic value)
+        {
+             dynamic json = JsonConvert.DeserializeObject(value);
+            var bodyData = _vehicles.UpdateVehicle(json);
             if (bodyData == null)
             {
                 return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");

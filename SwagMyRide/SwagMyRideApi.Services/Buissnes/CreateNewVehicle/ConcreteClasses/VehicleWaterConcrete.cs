@@ -24,66 +24,67 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
             _vehicleWater.BoatBladesId = (long)_collection["BoatBladesId"];
         }
 
+        public void ProvideVehicleBase()
+        {
+            //
+
+        }
+
         public VehicleBase VehicleService()
         {
             return _vehicleWater;
         }
 
-        public void ProvideVehicleBase()
-        {
-            _vehicleWater.VehicleBaseId = (long)_collection["ProvideVehicleBase"];
-        }
-
         public void ProvideUser()
         {
-            _vehicleWater.UserProfileId = (long)_collection["ProvideUser"];
+            _vehicleWater.UserProfileId = (long)(_collection["ProvideUser"]);
         }
 
         public void VehicleType()
         {
-            _vehicleWater.VechileTypeId = (short)_collection["VehicleTypeId"];
+            _vehicleWater.VechileTypeId = (short)(_collection["ProvideVehicleType"]);
         }
 
         public void ProvideColor()
         {
-            _vehicleWater.Color = (string)_collection["ProvideColor"];
+            _vehicleWater.Color = (string)_collection["Color"];
         }
 
 
 
         public void ProvideBodyWork()
         {
-            _vehicleWater.Color = (string)_collection["ProvideBodyWork"];
+            _vehicleWater.BodyWorkId = (long)_collection["ProvideBodyWork"];
         }
 
         public void ProvideElectrySystem()
         {
-            _vehicleWater.ElecticSystemId = (long)_collection["ProvideElectrySystem"];
+            _vehicleWater.ElecticSystemId = (long)(_collection["ProvideElectrySystem"]);
         }
 
         public void ProvideLastModifyTime()
         {
-            _vehicleWater.LastModifyTime = (DateTime)_collection["ProvideLastModifyTime"];
+            _vehicleWater.LastModifyTime = DateTime.UtcNow;
         }
 
         public void ProvideCombustibleId()
         {
-            _vehicleWater.CombustibleId = (long)_collection["ProvideCombustibleId"];
+            _vehicleWater.CombustibleId = (long)(_collection["ProvideCombustibleId"]);
         }
 
         public void ProvideModel()
         {
-            _vehicleWater.CombustibleId = (long)_collection["ProvideCombustibleId"];
+            _vehicleWater.VehicleModelId = (long)(_collection["ProvideModelId"]);
         }
 
         public void ProvideBrand()
         {
-            _vehicleWater.VehicleBrandId = (long)_collection["ProvideBrand"];
+            _vehicleWater.VehicleBrandId = (long)(_collection["ProvideVehicleBrandId"]);
         }
 
         public void ProvideVehicleYear()
         {
-            _vehicleWater.VehicleYear = (long)_collection["ProvideVehicleYear"];
+            _vehicleWater.VehicleYear = (long)(_collection["ProvideVehicleYear"]);
         }
 
 

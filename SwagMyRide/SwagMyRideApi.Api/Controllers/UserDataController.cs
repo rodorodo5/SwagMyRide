@@ -30,7 +30,7 @@ namespace SwagMyRideApi.Api.Controllers
             var bodyData = _userProfile.GetPassword(email,password);
             if (bodyData == null)
             {
-                return BadRequest();
+                return  Json("Error");
             }
 
             AuthResponse getResponse = new Version1(bodyData);
@@ -43,17 +43,17 @@ namespace SwagMyRideApi.Api.Controllers
         [Microsoft.AspNetCore.Mvc.Route("api/userdata/add/")]
         public IActionResult AddUserData([FromBody] SwagMyRide.Data.Models.UserData.UserProfile value)
         {
-
+            
             var bodyData = value;
             if (bodyData == null)
             {
-                return BadRequest();
+                return BadRequest("Params are Invalid");
             }
 
             _userProfile.CreateUser(bodyData);
 
 
-            return Ok();
+            return Ok("Success");
 
         }
 

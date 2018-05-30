@@ -10,8 +10,8 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.Enum
         public enum VehicleType:short
         {
             Air=1,
-            Land=2,
-            Water=3
+            Land=3,
+            Water=2
         }
     }
 }

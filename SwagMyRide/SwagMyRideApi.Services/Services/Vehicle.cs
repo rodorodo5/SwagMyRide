@@ -10,10 +10,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SwagMyRide.Data.DataContext;
 using SwagMyRide.Data.Models.VehicleData;
 using SwagMyRide.Data.Models.Vehicles;
+using SwagMyRideApi.Services.Buissnes.CreateNewVehicle;
 using SwagMyRideApi.Services.Buissnes.CreateNewVehicle.Base;
 using SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses;
 using SwagMyRideApi.Services.Buissnes.CreateNewVehicle.Enum;
@@ -34,44 +36,22 @@ namespace SwagMyRideApi.Services.Services
 
         public HttpResponseMessage SavedVehicle(JObject vehicleObject)
         {
-            IVehicleBuilder vehicleBuilder;
-            Director director = new Director();
-            VehicleBase vehicleBase = null;
-            if ((short) vehicleObject["ProvideVehicleType"] == (short) EnumVehicleType.VehicleType.Air)
-            {
-                vehicleBuilder = new VehicleAirConcrete(vehicleObject);
-                director.Construct(vehicleBuilder);
-                 vehicleBase = (VehicleAir)vehicleBuilder.VehicleService();
-            }
-            if ((short)vehicleObject["ProvideVehicleType"] == (short)EnumVehicleType.VehicleType.Land)
-            {
-                vehicleBuilder = new VehicleLandConcrete(vehicleObject);
-                director.Construct(vehicleBuilder);
-                vehicleBase = (VehicleLand)vehicleBuilder.VehicleService();
-                
-            }
-            if ((short)vehicleObject["ProvideVehicleType"] == (short)EnumVehicleType.VehicleType.Water)
-            {
-                vehicleBuilder = new VehicleLandConcrete(vehicleObject);
-                director.Construct(vehicleBuilder);
-                vehicleBase = (VehicleWater)vehicleBuilder.VehicleService();
-            }
-
-            _db.VehicleBase.Add(vehicleBase ?? throw new InvalidOperationException());
+            var vehicleBase = Buissnes.CreateNewVehicle.SavedVehicle.SaVehicleBase(vehicleObject);
+            vehicleBase.LastModifyTime = DateTime.UtcNow;
+            _db.VehicleBase.Add(vehicleBase);
             _db.SaveChanges();
             return new HttpResponseMessage(HttpStatusCode.Created);
         }
 
-        public HttpResponseMessage UpdateVehicle(SwagMyRide.Data.Models.Vehicles.VehicleBase vehicleObject)
+        public HttpResponseMessage UpdateVehicle(JObject vehicleObject)
         {
-            var data = vehicleObject;
-            if (data == null)
-            {
-                return new HttpResponseMessage(HttpStatusCode.BadRequest);
-            }
+            var vehicleBase = Buissnes.CreateNewVehicle.SavedVehicle.SaVehicleBase(vehicleObject);
+            var id = vehicleBase.VehicleBaseId;
+            var entity = _db.VehicleBase.Find(id);
             try
             {
-                _db.Entry(data).State = EntityState.Modified;
+                entity.LastModifyTime = DateTime.UtcNow;
+                _db.Entry(entity).CurrentValues.SetValues(vehicleObject); 
                 _db.SaveChanges();
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }

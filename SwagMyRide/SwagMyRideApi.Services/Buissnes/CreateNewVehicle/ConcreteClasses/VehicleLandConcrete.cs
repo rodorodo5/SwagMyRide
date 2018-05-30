@@ -27,13 +27,16 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
 
         }
 
+
+        public void ProvideVehicleBase()
+        {
+            //
+
+        }
+
         public VehicleBase VehicleService()
         {
             return _vehicleLand;
-        }
-        public void ProvideVehicleBase()
-        {
-            _vehicleLand.VehicleBaseId = (long)(_collection["VehicleBaseId"]);
         }
 
         public void ProvideUser()
@@ -43,19 +46,19 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
 
         public void VehicleType()
         {
-            _vehicleLand.VechileTypeId = (short)(_collection["VehicleTypeId"]);
+            _vehicleLand.VechileTypeId = (short)(_collection["ProvideVehicleType"]);
         }
 
         public void ProvideColor()
         {
-            _vehicleLand.Color = (string)_collection["ProvideColor"];
+            _vehicleLand.Color = (string)_collection["Color"];
         }
 
 
 
         public void ProvideBodyWork()
         {
-            _vehicleLand.BodyWorkId = (long)(_collection["ProvideBodyWork"]);
+            _vehicleLand.BodyWorkId = (long)_collection["ProvideBodyWork"];
         }
 
         public void ProvideElectrySystem()
@@ -65,7 +68,7 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
 
         public void ProvideLastModifyTime()
         {
-            _vehicleLand.LastModifyTime = (DateTime)(_collection["ProvideLastModifyTime"]);
+            _vehicleLand.LastModifyTime = DateTime.UtcNow;
         }
 
         public void ProvideCombustibleId()
@@ -75,19 +78,18 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
 
         public void ProvideModel()
         {
-            _vehicleLand.MotorId = (long)(_collection["ProvideModel"]);
+            _vehicleLand.VehicleModelId = (long)(_collection["ProvideModelId"]);
         }
 
         public void ProvideBrand()
         {
-            _vehicleLand.VehicleBrandId = (long)(_collection["ProvideBrand"]);
+            _vehicleLand.VehicleBrandId = (long)(_collection["ProvideVehicleBrandId"]);
         }
 
         public void ProvideVehicleYear()
         {
             _vehicleLand.VehicleYear = (long)(_collection["ProvideVehicleYear"]);
         }
-
 
 
     }
