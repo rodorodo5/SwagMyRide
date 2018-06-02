@@ -1,0 +1,37 @@
+<div ng-include="'templates/navbar.html'"></div>
+
+
+
+<div class="center_t">
+	<div class="display_t">
+		<div class="containertable">
+			<div class="users_div margcholo2" ng-init="fill_carritos()">
+				<table class="table_d table table-bordered pagin-table overflow_true">
+			        <thead class="overflow_true bgcolorb">
+			            <tr class="tcolor">
+			                <th style="width: 60px;">Id</th>
+			                <th>Nombre</th>
+			                <th>Descripcion</th>
+			                <th>Precio</th>
+			            </tr>
+			        </thead>
+			        <tbody>
+
+			             <tr class="colorred" dir-paginate="x in userCarrito | itemsPerPage:10" total-items="totalItems">
+			                <td ng-if="x.isBought == true">{{x.orderListId}}</td>
+			                <td ng-if="x.isBought == true">{{x.name}}</td>
+			                <td ng-if="x.isBought == true">{{x.description}}</td>
+			                <td ng-if="x.isBought == true">{{x.price}}</td>
+			            </tr>
+
+			        </tbody>
+			    </table>
+				<dir-pagination-controls class="pull-rightpad" on-page-change="pageChanged(newPageNumber)" template-url="views/dirPagination.html"></dir-pagination-controls>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+

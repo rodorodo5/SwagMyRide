@@ -1,0 +1,176 @@
+<div ng-include="'templates/navbar_pre.html'"></div>
+
+<div class="container margtopre" ng-init="fill_pais()">
+    <form class="form-horizontal" role="form">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2 class="center_t">Registrar Usuario</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="name">Nombre</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input ng-model="register.name" type="text" class="form-control" id="name"
+                               placeholder="Ingresar tu nombre" required autofocus>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            <!-- Put name validation error messages here -->
+                        </span>
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="name">Apellido</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-users"></i></div>
+                        <input ng-model="register.apellido"  type="text" class="form-control" 
+                               placeholder="Ingresar tu apellido" required autofocus>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="name">Phone</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-phone"></i></div>
+                        <input ng-model="register.telefono"  type="text" class="form-control"
+                               placeholder="Ingresar tu telefono" required autofocus>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="name">Sexo</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-transgender"></i></div>
+                        <select ng-model="register.sexo" class="form-control" required>
+	                        <option value="" disabled selected>Selecciona tu sexo</option>
+	                        <option>Hombre</option>
+	                        <option>Mujer</option>
+	                        <option>Otro</option>
+	                    </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="name">País</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-globe"></i></div>
+
+                        <select ng-model="register.pais" ng-options="item.countryId as item.name for item in paisesFill" class="form-control" required>
+	                        <option value="" disabled selected>Selecciona tu país</option>
+	                    </select>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="name">Fecha de nacimiento</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-birthday-cake"></i></div>
+                        <input ng-model="register.bday" type="date"  class="form-control" placeholder="Fecha de Nacimiento" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="email">Dirección E-Mail</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        <input ng-model="register.email"type="text" name="email" class="form-control" id="email"
+                               placeholder="usuario@swagmyride.com" required autofocus>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            <!-- Put e-mail validation error messages here -->
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="password">Contraseña</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group has-danger">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                        <input ng-model="register.pass" type="password" name="password" class="form-control" id="password"
+                               placeholder="Password" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="password">Confirmar Contraseña</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem">
+                            <i class="fa fa-repeat"></i>
+                        </div>
+                        <input ng-model="register.confirm" type="password" name="password-confirmation" class="form-control"
+                               id="password-confirm" placeholder="Password" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <button ng-click="registeruser()" class="btn btn-success"><i class="fa fa-user-plus"></i>Registrar</button>
+            </div>
+        </div>
+    </form>
+</div>

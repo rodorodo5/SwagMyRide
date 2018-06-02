@@ -1,0 +1,27 @@
+<div ng-include="'templates/navbar.html'"></div>
+<div class="home_banner">
+    <p class="bienvenido_t">Bienvenido {{user}}</p>
+</div>
+
+
+<div class="container marketing padcontl">
+<div class="row">
+    <div class="col-lg-4">
+        <img class="rounded-circle circle_bord" src="img/create.jpg" alt="Generic placeholder image" width="140" height="140">
+        <h2 class="text_center">Crea tu vehiculo</h2>
+        <p class="text_center">Compra las partes que desees de distintos proveedores para tu vehiculo, carros, botes o aviones!.</p>
+        <p><a class="btn btn-secondary" ng-click="goView('/tipo_select')" role="button">View details »</a></p>
+    </div>
+    <div class="col-lg-4">
+        <img class="rounded-circle circle_bord" src="img/pieces.jpg" alt="Generic placeholder image" width="140" height="140">
+        <h2 class="text_center">Consulta tus vehiculos</h2>
+        <p class="text_center">Compra las partes que desees de distintos proveedores para tu vehiculo, carros, botes o aviones!.</p>
+        <p><a class="btn btn-secondary" ng-click="goView('/tipo_select')" role="button">View details »</a></p>
+    </div>
+    <div class="col-lg-4">
+        <img class="rounded-circle circle_bord" src="img/parts.jpg" alt="Generic placeholder image" width="140" height="140">
+        <h2 class="text_center">Compra partes</h2>
+        <p class="text_center">Compra las partes que desees de distintos proveedores para tu vehiculo, carros, botes o aviones!.</p>
+        <p><a class="btn btn-secondary" ng-click="goView('/tipo_select')" role="button">View details »</a></p>
+    </div>
+</div>

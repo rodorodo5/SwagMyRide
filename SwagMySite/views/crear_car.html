@@ -1,0 +1,476 @@
+<div ng-controller="createController">
+	
+
+<div ng-include="'templates/navbar.html'"></div>
+
+	<div class="crear_panel_s" >
+		<div class="meme">
+
+		   <legend ng-if="globalVehicleID == 3">AGREAR AUTO</legend>
+		   <legend ng-if="globalVehicleID == 2">AGREAR BOTE</legend>
+		   <legend ng-if="globalVehicleID == 1">AGREAR AVION</legend>
+
+		   <div class="margin_p">
+		   		<label ng-if="globalVehicleID == 3 || globalVehicleID == 1">Breaks</label>
+		   		<button ng-if="globalVehicleID == 3 || globalVehicleID == 1" ng-click="fill_breaks()"  class="btn btn-secondary binh" data-toggle="modal" data-target="#breaks">Seleccionar Breaks</button>
+
+		   		<label>Motor</label>
+		   		<button ng-click="fill_motor()"  class="btn btn-secondary binh" data-toggle="modal" data-target="#motor">Seleccionar Motor</button>
+
+		   		<label>Body Work</label>
+		   		<button ng-click="fill_bodywork()"  class="btn btn-secondary binh" data-toggle="modal" data-target="#bodyw">Seleccionar Body Work</button>
+
+		   		<label>Electric System</label>
+		   		<button ng-click="fill_electric()"  class="btn btn-secondary binh" data-toggle="modal" data-target="#electric">Seleccionar Electric System</button>
+		   </div>
+		   <div class="margin_p">
+		   		<label ng-if="globalVehicleID == 3 || globalVehicleID == 1">Suspension</label>
+		   		<button ng-if="globalVehicleID == 3 || globalVehicleID == 1" ng-click="fill_suspension()"  class="btn btn-secondary binh" data-toggle="modal" data-target="#suspension">Seleccionar Suspension</button>
+
+		   		<label ng-if="globalVehicleID == 3 || globalVehicleID == 1">Llantas</label>
+		   		<button ng-if="globalVehicleID == 3 || globalVehicleID == 1" ng-click="fill_llantas()"  class="btn btn-secondary binh" data-toggle="modal" data-target="#llantas">Seleccionar llantas</button>
+
+		   		<label ng-if="globalVehicleID == 3">Rines</label>
+		   		<button ng-if="globalVehicleID == 3" ng-click="fill_rines()" class="btn btn-secondary binh" data-toggle="modal" data-target="#rines">Seleccionar Rines</button>
+
+		   		<label ng-if="globalVehicleID == 1">Turbinas</label>
+		   		<button ng-if="globalVehicleID == 1" ng-click="fill_turbinas()" class="btn btn-secondary binh" data-toggle="modal" data-target="#turbinas">Seleccionar turbinas</button>
+
+		   		<label ng-if="globalVehicleID == 2">Boat Blades</label>
+		   		<button ng-if="globalVehicleID == 2" ng-click="fill_blades()" class="btn btn-secondary binh" data-toggle="modal" data-target="#blades">Seleccionar blades</button>
+
+		   		<label ng-if="globalVehicleID == 1">Numero de Turbinas</label>
+		   		<input ng-if="globalVehicleID == 1" type="number" ng-model="car.numturbinas" class="form-control binh" />
+
+		   		<label ng-if="globalVehicleID == 2">Numero de Blades</label>
+		   		<input ng-if="globalVehicleID == 2" type="number" ng-model="car.numblades" class="form-control binh" />
+
+		   		<label>Color</label>
+		   		<input class="form-control binh" ng-model="car.color" color-picker color-picker-model="car.color" ng-style="{background:car.color}"/>
+		   </div>
+		   	<button ng-if="globalVehicleID == 3" type="button" ng-click="insertCar()" style="display: inherit !important;" class="buttonc btn btn-info">CREAR CARRO</button>
+
+		   	<button ng-if="globalVehicleID == 1" type="button" ng-click="insertPlane()" style="display: inherit !important;" class="buttonc btn btn-info">CREAR AVION</button>
+
+		   	<button ng-if="globalVehicleID == 2" type="button" ng-click="insertBoat()" style="display: inherit !important;" class="buttonc btn btn-info" >CREAR BOTE</button>
+
+		</div>
+	</div>
+
+
+
+
+	<div class="modal" tabindex="-1" id="breaks" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Selecciona tus frenos</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+
+	     
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="modal-body">
+					  <select  ng-model="car.brake" ng-options="item.brakeId as item.name for item in fillBreaks" ng-change="getBrakeInfo(car.brake)" class="form-control cforms" required>
+					    <option value="" disabled selected>Sleccionar Frenos</option>
+					  </select>
+			        </div>
+		      	</div>
+		      </div>
+
+
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="rino">
+				      	<div>
+				      		<h3>Descripcion</h3>
+				      		<p>{{ brakeInfo.description}}</p>
+				      	</div>
+				      	<div>
+				      		<h3>Imagen</h3>
+				      		<img class="imgjs" ng-src="{{brakeInfo.image}}">
+				      	</div>
+				    </div>
+		      	</div>
+		      </div>
+	  
+
+	      <div class="modal-footer">
+	         <button type="button" class="btn btn-primary" data-dismiss="modal">Save Edit</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal" tabindex="-1" id="motor" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Selecciona tu motor</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="modal-body">
+					  <select  ng-model="car.motor" ng-options="item.motorId as item.name for item in fillMotor" ng-change="getMotorInfo(car.motor)" class="form-control cforms" required>
+					    <option value="" disabled selected>Sleccionar Motor</option>
+					  </select>
+			        </div>
+		      	</div>
+		      </div>
+
+
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="rino">
+				      	<div>
+				      		<h3>Descripción</h3>
+				      		<p>{{ motorInfo.description}}</p>
+				      		<h3>Horse power</h3>
+				      		<p>{{ motorInfo.horsePower}} HP</p>
+				      		<h3>Cilindros</h3>
+				      		<p>{{ motorInfo.cylinders}}</p>
+				      	</div>
+				      	<div>
+				      		<h3>Imagen</h3>
+				      		<img class="imgjs" ng-src="{{motorInfo.image}}">
+				      	</div>
+				    </div>
+		      	</div>
+		      </div>
+	  
+
+	      <div class="modal-footer">
+	         <button type="button" class="btn btn-primary" data-dismiss="modal">Save Edit</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal" tabindex="-1" id="bodyw" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Selecciona tu BodyWork</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+
+	     
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="modal-body">
+					  <select  ng-model="car.bodywork" ng-options="item.bodyWorkId as item.name for item in fillBodyw" ng-change="getBodywInfo(car.bodywork)" class="form-control cforms" required>
+					    <option value="" disabled selected>Sleccionar BodyWork</option>
+					  </select>
+			        </div>
+		      	</div>
+		      </div>
+
+
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="rino">
+				      	<div>
+				      		<h3>Descripcion</h3>
+				      		<p>{{ bodyWinfo.description}}</p>
+				      		<h3>Material</h3>
+				      		<p>{{ bodyWinfo.material}}</p>
+				      	</div>
+				      	<div>
+				      		<h3>Imagen</h3>
+				      		<img class="imgjs" ng-src="{{bodyWinfo.image}}">
+				      	</div>
+				    </div>
+		      	</div>
+		      </div>
+	  
+
+	      <div class="modal-footer">
+	         <button type="button" class="btn btn-primary" data-dismiss="modal">Save Edit</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal" tabindex="-1" id="electric" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Selecciona Sistema Electrico</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+
+	     
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="modal-body">
+					  <select  ng-model="car.electric" ng-options="item.electicSystemId as item.name for item in fillElectric" ng-change="getElectricInfo(car.electric)" class="form-control cforms" required>
+					    <option value="" disabled selected>Sleccionar BodyWork</option>
+					  </select>
+			        </div>
+		      	</div>
+		      </div>
+
+
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="rino">
+				      	<div>
+				      		<h3>Descripcion</h3>
+				      		<p>{{ ElectricInfo.description}}</p>
+				      	</div>
+				      	<div>
+				      		<h3>Imagen</h3>
+				      		<img class="imgjs" ng-src="{{ElectricInfo.image}}">
+				      	</div>
+				    </div>
+		      	</div>
+		      </div>
+	  
+
+	      <div class="modal-footer">
+	         <button type="button" class="btn btn-primary" data-dismiss="modal">Save Edit</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal" tabindex="-1" id="suspension" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Selecciona la suspension</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+
+	     
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="modal-body">
+					  <select  ng-model="car.suspension" ng-options="item.suspensionId as item.name for item in fillSuspension" ng-change="getSuspensionInfo(car.suspension)" class="form-control cforms" required>
+					    <option value="" disabled selected>Sleccionar Suspension</option>
+					  </select>
+			        </div>
+		      	</div>
+		      </div>
+
+
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="rino">
+				      	<div>
+				      		<h3>Descripcion</h3>
+				      		<p>{{ SuspensionInfo.description}}</p>
+				      	</div>
+				      	<div>
+				      		<h3>Imagen</h3>
+				      		<img class="imgjs" ng-src="{{SuspensionInfo.image}}">
+				      	</div>
+				    </div>
+		      	</div>
+		      </div>
+	  
+
+	      <div class="modal-footer">
+	         <button type="button" class="btn btn-primary" data-dismiss="modal">Save Edit</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal" tabindex="-1" id="llantas" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Selecciona las llantas</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+
+	     
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="modal-body">
+					  <select  ng-model="car.llantas" ng-options="item.wheelId as item.name for item in fillLlantas" ng-change="getLlantasInfo(car.llantas)" class="form-control cforms" required>
+					    <option value="" disabled selected>Sleccionar Llantas</option>
+					  </select>
+			        </div>
+		      	</div>
+		      </div>
+
+
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="rino">
+				      	<div>
+				      		<h3>Descripcion</h3>
+				      		<p>{{ LlantasInfo.description}}</p>
+				      	</div>
+				      	<div>
+				      		<h3>Imagen</h3>
+				      		<img class="imgjs" ng-src="{{LlantasInfo.image}}">
+				      	</div>
+				    </div>
+		      	</div>
+		      </div>
+	  
+
+	      <div class="modal-footer">
+	         <button type="button" class="btn btn-primary" data-dismiss="modal">Save Edit</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal" tabindex="-1" id="rines" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Selecciona los rines</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+
+	     
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="modal-body">
+					  <select  ng-model="car.rines" ng-options="item.tiresId as item.name for item in fillRines" ng-change="getRinesInfo(car.rines)" class="form-control cforms" required>
+					    <option value="" disabled selected>Sleccionar Rines</option>
+					  </select>
+			        </div>
+		      	</div>
+		      </div>
+
+
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="rino">
+				      	<div>
+				      		<h3>Descripcion</h3>
+				      		<p>{{ RinesInfo.description}}</p>
+				      	</div>
+				      	<div>
+				      		<h3>Imagen</h3>
+				      		<img class="imgjs" ng-src="{{RinesInfo.image}}">
+				      	</div>
+				    </div>
+		      	</div>
+		      </div>
+	  
+
+	      <div class="modal-footer">
+	         <button type="button" class="btn btn-primary" data-dismiss="modal">Save Edit</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal" tabindex="-1" id="turbinas" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Selecciona tus turbinas</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+
+	     
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="modal-body">
+					  <select  ng-model="car.turbinas" ng-options="item.turbinesId as item.name for item in fillTurbinas" ng-change="getTurbinaInfo(car.turbinas)" class="form-control cforms" required>
+					    <option value="" disabled selected>Sleccionar turbinas</option>
+					  </select>
+			        </div>
+		      	</div>
+		      </div>
+
+
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="rino">
+				      	<div>
+				      		<h3>Descripcion</h3>
+				      		<p>{{ TurbinaInfo.description}}</p>
+				      		<h3>Material</h3>
+				      		<p>{{ TurbinaInfo.material}}</p>
+				      	</div>
+				      	<div>
+				      		<h3>Imagen</h3>
+				      		<img class="imgjs" ng-src="{{TurbinaInfo.image}}">
+				      	</div>
+				    </div>
+		      	</div>
+		      </div>
+	  
+
+	      <div class="modal-footer">
+	         <button type="button" class="btn btn-primary" data-dismiss="modal">Save Edit</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal" tabindex="-1" id="blades" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Selecciona tus blades</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+
+	     
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="modal-body">
+					  <select  ng-model="car.blades" ng-options="item.boatBladesId as item.name for item in fillBlades" ng-change="getbladesInfo(car.blades)" class="form-control cforms" required>
+					    <option value="" disabled selected>Sleccionar turbinas</option>
+					  </select>
+			        </div>
+		      	</div>
+		      </div>
+
+
+		      <div class="centaurio">
+		      	<div class="displaya">
+		      		<div class="rino">
+				      	<div>
+				      		<h3>Descripcion</h3>
+				      		<p>{{ bladesInfo.description}}</p>
+				      	</div>
+				      	<div>
+				      		<h3>Imagen</h3>
+				      		<img class="imgjs" ng-src="{{bladesInfo.image}}">
+				      	</div>
+				    </div>
+		      	</div>
+		      </div>
+	  
+
+	      <div class="modal-footer">
+	         <button type="button" class="btn btn-primary" data-dismiss="modal">Save Edit</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+</div>

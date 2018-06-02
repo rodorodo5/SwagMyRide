@@ -1,0 +1,23 @@
+<div ng-include="'templates/navbar.html'"></div>
+<div ng-controller="WizdardCarController" ng-init="getMarcaByID()">
+	<div class="center_t mapsw">
+		<div class="display_t">
+			<div class="memesaurios">  
+				<h2 class="text_centerw">Selecciona la Marca</h2> 
+				<div class="center_t">
+					<div class="display_t">
+						<form name="fomrita">
+								<select  ng-model="car.marca" ng-options="item.vehicleBrandId as item.brandName for item in carMarcas" ng-change="getMarcaInfo(car.marca)" class="form-control cforms" required>
+						    	<option value="" disabled selected>Sleccionar Marca</option>
+						  	</select>
+						</form>
+					  	<button class="btn btn-success margensillo" ng-click="saveMarca(marcaInfo.vehicleBrandId)" ng-disabled="fomrita.$invalid">Siguiente</button>
+					</div>
+				</div>     
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
