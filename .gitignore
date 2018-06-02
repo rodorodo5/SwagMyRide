@@ -327,3 +327,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/SwagMyRide/SwagMyRide.Data/DataContext/ApplicationContext.cs
+/SwagMyRide/SwagMyRide.Data/appsettings.json
