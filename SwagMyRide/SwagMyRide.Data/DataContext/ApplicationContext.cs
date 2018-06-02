@@ -54,8 +54,7 @@ namespace SwagMyRide.Data.DataContext
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=tcp:swagmyridedb.database.windows.net,1433;Initial Catalog=SwagMyRideDB;Persist Security Info=False;User ID='SwagMyRideDB';Password='polloFrito1';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-            //optionsBuilder.UseSqlServer(@"Server = BERENICE\ISAAC; Database = SwagMyRideDB; Trusted_Connection = True;");
+           //optionsBuilder.UseSqlServer(@"Server = BERENICE\ISAAC; Database = SwagMyRideDB; Trusted_Connection = True;");
         }
     }
 }
