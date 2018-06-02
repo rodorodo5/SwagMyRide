@@ -16,6 +16,8 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
     {
         private readonly JObject _collection;
         private readonly VehicleAir _vehicleAir;
+
+
         public VehicleAirConcrete(JObject vehicle)
         {
             _vehicleAir = new VehicleAir();
@@ -24,14 +26,27 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
             _vehicleAir.TurbinesCount = (short)(_collection["TurbinesCount"]);
             _vehicleAir.SuspensionId = (short)(_collection["SuspensionId"]);
             _vehicleAir.WheelId = (short)(_collection["WheelId"]);
+            _vehicleAir.BrakeId = (long) _collection["BrakeId"];
+            _vehicleAir.MotorId = (long) _collection["MotorId"];
         }
 
 
         public void ProvideVehicleBase()
         {
-            //
-            
+           //
+
         }
+
+        public void ProvideVehicleBrandName()
+        {
+            _vehicleAir.VechileBrandName = (string)(_collection["ProvideBrandName"]);
+        }
+
+        public void ProvideVehicleModelName()
+        {
+            _vehicleAir.VehicleModelName = (string)(_collection["ProvideModelName"]);
+        }
+
 
         public VehicleBase VehicleService()
         {

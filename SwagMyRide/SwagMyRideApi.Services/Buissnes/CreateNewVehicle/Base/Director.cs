@@ -23,6 +23,8 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.Base
             builder.ProvideVehicleYear();
             builder.ProvideUser();
             builder.ProvideVehicleBase();
+            builder.ProvideVehicleBrandName();
+            builder.ProvideVehicleModelName();
         }
     }
 }

@@ -20,6 +20,8 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.Interfaces
         void ProvideVehicleYear();
         void ProvideUser();
         void ProvideVehicleBase();
+        void ProvideVehicleBrandName();
+        void ProvideVehicleModelName();
         VehicleBase VehicleService();
     }
 }

@@ -53,7 +53,13 @@ namespace SwagMyRide.Data.Models.Vehicles
 
         [Required]
         public short VechileTypeId { get; set; }
-       
+
+        [Required]
+        public string VehicleModelName { get; set; }
+
+
+        [Required]
+        public string VechileBrandName { get; set; }
 
     }
 }

@@ -35,6 +35,9 @@ namespace SwagMyRide.Data.Models.Vehicles
 
         public long WheelId { get; set; }
         
+        public long BrakeId { get; set; }
+
+        public long MotorId { get; set; }
 
 
 

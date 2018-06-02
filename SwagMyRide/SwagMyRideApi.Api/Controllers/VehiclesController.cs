@@ -99,7 +99,7 @@ namespace SwagMyRideApi.Api.Controllers
         [Microsoft.AspNetCore.Mvc.Route("api/data/vehicle/updatevehicle/")]
         public IActionResult UpdateVehiclePerBaseId([FromBody]dynamic value)
         {
-             dynamic json = JsonConvert.DeserializeObject(value);
+             dynamic json = JsonConvert.DeserializeObject(value.ToString());
             var bodyData = _vehicles.UpdateVehicle(json);
             if (bodyData == null)
             {
@@ -108,6 +108,13 @@ namespace SwagMyRideApi.Api.Controllers
             return Ok(bodyData);
         }
 
+        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [Microsoft.AspNetCore.Mvc.Route("api/data/deletevehicle/{id}")]
+        public IActionResult DeleteVehicle(int id)
+        {
 
+            var bodyData = _vehicles.DeleteVehicle(id);
+            return Ok(bodyData);
+        }
     }
 }

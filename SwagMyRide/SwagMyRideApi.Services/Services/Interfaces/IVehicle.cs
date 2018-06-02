@@ -15,6 +15,7 @@ namespace SwagMyRideApi.Services.Services.Interfaces
     {
         HttpResponseMessage SavedVehicle(JObject vehicleObject);
         HttpResponseMessage UpdateVehicle(JObject vehicleObject);
+        HttpResponseMessage DeleteVehicle(int vehicleId);
         List<SwagMyRide.Data.Models.Vehicles.VehicleBase> GetAllData();
         List<SwagMyRide.Data.Models.Vehicles.VehicleBase> GetDataPerId(int id);
         List<SwagMyRide.Data.Models.Vehicles.VehicleBase> GetDataPerUser(int id);

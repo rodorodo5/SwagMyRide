@@ -11,6 +11,8 @@
     <Compile Remove="Migrations\20180525225938_AddingNewModels.Designer.cs" />
     <Compile Remove="Migrations\20180528095328_AddingOrderListModel.cs" />
     <Compile Remove="Migrations\20180528095328_AddingOrderListModel.Designer.cs" />
+    <Compile Remove="Migrations\20180601153948_ChangingData.cs" />
+    <Compile Remove="Migrations\20180601153948_ChangingData.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />

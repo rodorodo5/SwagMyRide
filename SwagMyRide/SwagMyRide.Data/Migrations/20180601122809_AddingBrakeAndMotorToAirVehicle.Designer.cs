@@ -12,9 +12,10 @@ using System;
 namespace SwagMyRide.Data.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20180601122809_AddingBrakeAndMotorToAirVehicle")]
+    partial class AddingBrakeAndMotorToAirVehicle
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -221,8 +222,6 @@ namespace SwagMyRide.Data.Migrations
 
                     b.Property<string>("Image")
                         .IsRequired();
-
-                    b.Property<bool>("IsBought");
 
                     b.Property<DateTime>("LastOrderDate");
 

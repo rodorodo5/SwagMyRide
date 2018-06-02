@@ -30,6 +30,16 @@ namespace SwagMyRideApi.Services.Buissnes.CreateNewVehicle.ConcreteClasses
 
         }
 
+        public void ProvideVehicleBrandName()
+        {
+            _vehicleWater.VechileBrandName = (string)(_collection["ProvideBrandName"]);
+        }
+
+        public void ProvideVehicleModelName()
+        {
+            _vehicleWater.VehicleModelName = (string)(_collection["ProvideModelName"]);
+        }
+
         public VehicleBase VehicleService()
         {
             return _vehicleWater;

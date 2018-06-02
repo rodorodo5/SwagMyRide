@@ -46,19 +46,45 @@ namespace SwagMyRideApi.Services.Services
         public HttpResponseMessage UpdateVehicle(JObject vehicleObject)
         {
             var vehicleBase = Buissnes.CreateNewVehicle.SavedVehicle.SaVehicleBase(vehicleObject);
-            var id = vehicleBase.VehicleBaseId;
-            var entity = _db.VehicleBase.Find(id);
+            vehicleBase.LastModifyTime = DateTime.UtcNow;
+            var id = (long)vehicleObject["VehicleBaseId"];
+            var entity = _db.VehicleBase.FirstOrDefault(x => x.VehicleBaseId==id);
+
             try
             {
-                entity.LastModifyTime = DateTime.UtcNow;
-                _db.Entry(entity).CurrentValues.SetValues(vehicleObject); 
+
+                
+                _db.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+                _db.VehicleBase.Add(vehicleBase);
                 _db.SaveChanges();
-                return new HttpResponseMessage(HttpStatusCode.OK);
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent("Success")
+                };
             }
             catch (Exception e)
             {
                 return new HttpResponseMessage(HttpStatusCode.InternalServerError);
             }
+
+        }
+
+        public HttpResponseMessage DeleteVehicle(int vehicleId)
+        {
+            var vehicle = _db.VehicleBase.SingleOrDefault(x => x.VehicleBaseId == vehicleId);
+            if (vehicle == null)
+                return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent("Data Is Not Exist")
+                };
+            _db.Entry(vehicle).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+            _db.SaveChanges();
+
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent("Success"),
+                ReasonPhrase = "Success"
+            };
 
         }
 

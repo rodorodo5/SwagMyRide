@@ -20,11 +20,6 @@ namespace SwagMyRideApi.Api.Controllers
         public IActionResult GetAllData()
         {
             var bodyData = _country.GetAllData();
-            if (bodyData == null)
-            {
-                return Content(HttpStatusCode.BadRequest.ToString(), "Internal Error");
-            }
-
             return Ok(bodyData);
 
         }

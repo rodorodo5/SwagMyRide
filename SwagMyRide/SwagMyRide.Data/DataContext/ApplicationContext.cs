@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SwagMyRide.Data.Models;
 using SwagMyRide.Data.Models.GlobalData;
+using SwagMyRide.Data.Models.Payment;
 using SwagMyRide.Data.Models.StoreComponents;
 using SwagMyRide.Data.Models.UserData;
 using SwagMyRide.Data.Models.VehicleComponents;
@@ -46,6 +47,10 @@ namespace SwagMyRide.Data.DataContext
         public DbSet<ProvidersComponents> ProvidersComponents { get; set; }
         public DbSet<MethodProvider> MethodProvider { get; set; }
         public DbSet<OrderList> OrderList { get; set; }
+        public DbSet<CreditCard> CreditCard { get; set; }
+        public DbSet<BillingAddress> BillingAddress { get; set; }
+        public DbSet<ComponentType> ComponentType { get; set; }
+        public DbSet<GlobalHistory> GlobalHistory { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
